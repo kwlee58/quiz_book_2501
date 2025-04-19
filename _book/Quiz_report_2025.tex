@@ -1,0 +1,679 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{fontspec}
+\setmainfont{KoPubWorldDotum}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Quiz Reports: 2025 Spring},
+  pdfauthor={이기원 (Kee-Won Lee)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Quiz Reports: 2025 Spring}
+\author{이기원 (Kee-Won Lee)}
+\date{2025-04-19}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{소개}\label{uxc18cuxac1c}
+
+이 문서는 2025년 봄학기 동안 수행된 주요 퀴즈 결과 및 분석을 정리한 보고서입니다.
+
+각 장에서는 개별 퀴즈의 응답 분포, 정답률, 인지편향 관찰 결과 등을 시각화하고 요약합니다.
+
+분석 대상은 다음과 같습니다:
+
+\begin{itemize}
+\tightlist
+\item
+  Wason Selection Task 정답률 변화
+\item
+  프레이밍 효과에 따른 반응 차이
+\item
+  Oxford Happiness Questionnaire 응답 패턴
+\item
+  언어별 응답지 차이 (한글 vs 영어)
+\end{itemize}
+
+R과 R Markdown을 기반으로 자동화된 시각화 및 분석을 포함합니다.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\chapter{1주차 데이터 실험 집계}\label{uxc8fcuxcc28-uxb370uxc774uxd130-uxc2e4uxd5d8-uxc9d1uxacc4}
+
+Placeholder
+
+\section{실험의 목적}\label{uxc2e4uxd5d8uxc758-uxbaa9uxc801}
+
+\subsection{Red, Black을 잘못 표시한 사람들}\label{red-blackuxc744-uxc798uxbabb-uxd45cuxc2dcuxd55c-uxc0acuxb78cuxb4e4}
+
+\subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black}
+
+\section{Q1. Dewey as good as elected, statistics convince Roper}\label{q1.-dewey-as-good-as-elected-statistics-convince-roper}
+
+\subsection{Roper(Counts)}\label{ropercounts}
+
+\subsection{Roper(\%)}\label{roper}
+
+\section{Q2. Statistics is the science of learning from data, \ldots{}}\label{q2.-statistics-is-the-science-of-learning-from-data}
+
+\subsection{ASA(Counts)}\label{asacounts}
+
+\subsection{ASA(\%)}\label{asa}
+
+\section{Q3. How to lie with statistics}\label{q3.-how-to-lie-with-statistics}
+
+\subsection{D.Huff(Counts)}\label{d.huffcounts}
+
+\subsection{D.Huff(\%)}\label{d.huff}
+
+\section{Q4. 종부세}\label{q4.-uxc885uxbd80uxc138}
+
+\subsection{질문지 선택지에 부연설명}\label{uxc9c8uxbb38uxc9c0-uxc120uxd0dduxc9c0uxc5d0-uxbd80uxc5f0uxc124uxba85}
+
+\subsection{집계}\label{uxc9d1uxacc4}
+
+\subsection{\% 비교.}\label{uxbe44uxad50.}
+
+\subsection{Mosaic Plot}\label{mosaic-plot}
+
+\subsection{\% 합계}\label{uxd569uxacc4}
+
+\section{마감 시간으로부터 제출 시간의 분포}\label{uxb9c8uxac10-uxc2dcuxac04uxc73cuxb85cuxbd80uxd130-uxc81cuxcd9c-uxc2dcuxac04uxc758-uxbd84uxd3ec}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c}
+
+\subsection{날마다 고르게 제출하는가?}\label{uxb0a0uxb9c8uxb2e4-uxace0uxb974uxac8c-uxc81cuxcd9cuxd558uxb294uxac00}
+
+\subsection{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504}
+
+\subsection{Red, Black 간에 닮았는가?}\label{red-black-uxac04uxc5d0-uxb2eeuxc558uxb294uxac00}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-1}
+
+\chapter{2주차 데이터 실험 집계}\label{uxc8fcuxcc28-uxb370uxc774uxd130-uxc2e4uxd5d8-uxc9d1uxacc4-1}
+
+Placeholder
+
+\section{실험의 목적}\label{uxc2e4uxd5d8uxc758-uxbaa9uxc801-1}
+
+\subsection{Red, Black을 잘못 표시한 사람들}\label{red-blackuxc744-uxc798uxbabb-uxd45cuxc2dcuxd55c-uxc0acuxb78cuxb4e4-1}
+
+\subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black-1}
+
+\section{Q1. 춘추전국시대에 국가통계관리의 중요성 강조}\label{q1.-uxcd98uxcd94uxc804uxad6duxc2dcuxb300uxc5d0-uxad6duxac00uxd1b5uxacc4uxad00uxb9acuxc758-uxc911uxc694uxc131-uxac15uxc870}
+
+\subsection{관자(집계표)}\label{uxad00uxc790uxc9d1uxacc4uxd45c}
+
+\subsection{관자(\%)}\label{uxad00uxc790}
+
+\section{Q2. 국가정책을 수립하는 데 통계의 역할}\label{q2.-uxad6duxac00uxc815uxcc45uxc744-uxc218uxb9bduxd558uxb294-uxb370-uxd1b5uxacc4uxc758-uxc5eduxd560}
+
+\subsection{통계의 중요성(집계표)}\label{uxd1b5uxacc4uxc758-uxc911uxc694uxc131uxc9d1uxacc4uxd45c}
+
+\subsection{통계의 중요성(\%)}\label{uxd1b5uxacc4uxc758-uxc911uxc694uxc131}
+
+\section{Q3. 우리나라 생산가능인구 감소 시기}\label{q3.-uxc6b0uxb9acuxb098uxb77c-uxc0dduxc0b0uxac00uxb2a5uxc778uxad6c-uxac10uxc18c-uxc2dcuxae30}
+
+\subsection{생산가능인구 감소 시기(집계표)}\label{uxc0dduxc0b0uxac00uxb2a5uxc778uxad6c-uxac10uxc18c-uxc2dcuxae30uxc9d1uxacc4uxd45c}
+
+\subsection{생산가능인구 감소 시기(\%)}\label{uxc0dduxc0b0uxac00uxb2a5uxc778uxad6c-uxac10uxc18c-uxc2dcuxae30}
+
+\section{Q4. 우리나라 총인구 최대 시기}\label{q4.-uxc6b0uxb9acuxb098uxb77c-uxcd1duxc778uxad6c-uxcd5cuxb300-uxc2dcuxae30}
+
+\subsection{총인구 최대 시기(집계표)}\label{uxcd1duxc778uxad6c-uxcd5cuxb300-uxc2dcuxae30uxc9d1uxacc4uxd45c}
+
+\subsection{총인구 최대 시기(\%)}\label{uxcd1duxc778uxad6c-uxcd5cuxb300-uxc2dcuxae30}
+
+\section{Q5. 소멸위험 단계 개선 지역}\label{q5.-uxc18cuxba78uxc704uxd5d8-uxb2e8uxacc4-uxac1cuxc120-uxc9c0uxc5ed}
+
+\subsection{소멸위험 단계 개선 지역(집계표)}\label{uxc18cuxba78uxc704uxd5d8-uxb2e8uxacc4-uxac1cuxc120-uxc9c0uxc5eduxc9d1uxacc4uxd45c}
+
+\subsection{소멸위험 단계 개선 지역(\%)}\label{uxc18cuxba78uxc704uxd5d8-uxb2e8uxacc4-uxac1cuxc120-uxc9c0uxc5ed}
+
+\section{Q6. 조출생률과 합계출산율}\label{q6.-uxc870uxcd9cuxc0dduxb960uxacfc-uxd569uxacc4uxcd9cuxc0b0uxc728}
+
+\subsection{조출생률과 합계출산율(집계표)}\label{uxc870uxcd9cuxc0dduxb960uxacfc-uxd569uxacc4uxcd9cuxc0b0uxc728uxc9d1uxacc4uxd45c}
+
+\subsection{조출생률과 합계출산율(\%)}\label{uxc870uxcd9cuxc0dduxb960uxacfc-uxd569uxacc4uxcd9cuxc0b0uxc728}
+
+\section{Q7. 눈속임 그래프(Cheating Charts)}\label{q7.-uxb208uxc18duxc784-uxadf8uxb798uxd504cheating-charts}
+
+\subsection{집계표}\label{uxc9d1uxacc4uxd45c}
+
+\subsection{\% 비교}\label{uxbe44uxad50}
+
+\subsection{집계}\label{uxc9d1uxacc4-1}
+
+\subsection{\%}\label{section}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-2}
+
+\section{마감 시간으로부터 제출 시간의 분포}\label{uxb9c8uxac10-uxc2dcuxac04uxc73cuxb85cuxbd80uxd130-uxc81cuxcd9c-uxc2dcuxac04uxc758-uxbd84uxd3ec-1}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c-1}
+
+\subsection{날마다 고르게 제출하는가?}\label{uxb0a0uxb9c8uxb2e4-uxace0uxb974uxac8c-uxc81cuxcd9cuxd558uxb294uxac00-1}
+
+\subsection{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504-1}
+
+\subsection{Red, Black 간에 닮았는가?}\label{red-black-uxac04uxc5d0-uxb2eeuxc558uxb294uxac00-1}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-3}
+
+\chapter{3주차 데이터 실험 집계}\label{uxc8fcuxcc28-uxb370uxc774uxd130-uxc2e4uxd5d8-uxc9d1uxacc4-2}
+
+Placeholder
+
+\section{실험의 목적}\label{uxc2e4uxd5d8uxc758-uxbaa9uxc801-2}
+
+\subsection{Red, Black을 잘못 표시한 사람들}\label{red-blackuxc744-uxc798uxbabb-uxd45cuxc2dcuxd55c-uxc0acuxb78cuxb4e4-2}
+
+\subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black-2}
+
+\section{Q1. 국세와 지방세 비중}\label{q1.-uxad6duxc138uxc640-uxc9c0uxbc29uxc138-uxbe44uxc911}
+
+\subsection{국세와 지방세 비중(집계표)}\label{uxad6duxc138uxc640-uxc9c0uxbc29uxc138-uxbe44uxc911uxc9d1uxacc4uxd45c}
+
+\subsection{국세와 지방세 비중(\%)}\label{uxad6duxc138uxc640-uxc9c0uxbc29uxc138-uxbe44uxc911}
+
+\section{Q2. 조세부담률}\label{q2.-uxc870uxc138uxbd80uxb2f4uxb960}
+
+\subsection{조세부담률(집계표)}\label{uxc870uxc138uxbd80uxb2f4uxb960uxc9d1uxacc4uxd45c}
+
+\subsection{조세부담률(\%)}\label{uxc870uxc138uxbd80uxb2f4uxb960}
+
+\section{Q3. OECD 국민부담률}\label{q3.-oecd-uxad6duxbbfcuxbd80uxb2f4uxb960}
+
+\subsection{OECD 국민부담률(집계표)}\label{oecd-uxad6duxbbfcuxbd80uxb2f4uxb960uxc9d1uxacc4uxd45c}
+
+\subsection{OECD 국민부담률(\%)}\label{oecd-uxad6duxbbfcuxbd80uxb2f4uxb960}
+
+\section{Q4. 과세대상 근로소득 1,200만 원}\label{q4.-uxacfcuxc138uxb300uxc0c1-uxadfcuxb85cuxc18cuxb4dd-1200uxb9cc-uxc6d0}
+
+\subsection{과세대상 근로소득 1,200만 원(집계표)}\label{uxacfcuxc138uxb300uxc0c1-uxadfcuxb85cuxc18cuxb4dd-1200uxb9cc-uxc6d0uxc9d1uxacc4uxd45c}
+
+\subsection{과세대상 근로소득 1,200만 원(\%)}\label{uxacfcuxc138uxb300uxc0c1-uxadfcuxb85cuxc18cuxb4dd-1200uxb9cc-uxc6d0}
+
+\section{Q5. 소득세 실효세율}\label{q5.-uxc18cuxb4dduxc138-uxc2e4uxd6a8uxc138uxc728}
+
+\subsection{소득세 실효세율(집계표)}\label{uxc18cuxb4dduxc138-uxc2e4uxd6a8uxc138uxc728uxc9d1uxacc4uxd45c}
+
+\subsection{소득세 실효세율(\%)}\label{uxc18cuxb4dduxc138-uxc2e4uxd6a8uxc138uxc728}
+
+\section{Q6. 기업규모별 과세 현황}\label{q6.-uxae30uxc5c5uxaddcuxbaa8uxbcc4-uxacfcuxc138-uxd604uxd669}
+
+\subsection{기업규모별 과세 현황(집계표)}\label{uxae30uxc5c5uxaddcuxbaa8uxbcc4-uxacfcuxc138-uxd604uxd669uxc9d1uxacc4uxd45c}
+
+\subsection{기업규모별 과세 현황(\%)}\label{uxae30uxc5c5uxaddcuxbaa8uxbcc4-uxacfcuxc138-uxd604uxd669}
+
+\section{Q7. 국민부담률 적정 수준 : 아일랜드와 OECD 평균}\label{q7.-uxad6duxbbfcuxbd80uxb2f4uxb960-uxc801uxc815-uxc218uxc900-uxc544uxc77cuxb79cuxb4dcuxc640-oecd-uxd3c9uxade0}
+
+\subsection{집계표}\label{uxc9d1uxacc4uxd45c-1}
+
+\subsection{\% 비교}\label{uxbe44uxad50-1}
+
+\subsection{\% 합계}\label{uxd569uxacc4-1}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-4}
+
+\section{마감 시간으로부터 제출 시간의 분포}\label{uxb9c8uxac10-uxc2dcuxac04uxc73cuxb85cuxbd80uxd130-uxc81cuxcd9c-uxc2dcuxac04uxc758-uxbd84uxd3ec-2}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c-2}
+
+\subsection{날마다 고르게 제출하는가?}\label{uxb0a0uxb9c8uxb2e4-uxace0uxb974uxac8c-uxc81cuxcd9cuxd558uxb294uxac00-2}
+
+\subsection{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504-2}
+
+\subsection{Red, Black 간에 닮았는가?}\label{red-black-uxac04uxc5d0-uxb2eeuxc558uxb294uxac00-2}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-5}
+
+\chapter{4주차 데이터 실험 집계}\label{uxc8fcuxcc28-uxb370uxc774uxd130-uxc2e4uxd5d8-uxc9d1uxacc4-3}
+
+Placeholder
+
+\section{실험의 목적}\label{uxc2e4uxd5d8uxc758-uxbaa9uxc801-3}
+
+\subsection{Red, Black을 잘못 표시한 사람들}\label{red-blackuxc744-uxc798uxbabb-uxd45cuxc2dcuxd55c-uxc0acuxb78cuxb4e4-3}
+
+\subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black-3}
+
+\section{Q1. 세종대왕 시대 조세제도}\label{q1.-uxc138uxc885uxb300uxc655-uxc2dcuxb300-uxc870uxc138uxc81cuxb3c4}
+
+\subsection{조선초기 조세제도}\label{uxc870uxc120uxcd08uxae30-uxc870uxc138uxc81cuxb3c4}
+
+\subsection{조선초기 조세제도(\%)}\label{uxc870uxc120uxcd08uxae30-uxc870uxc138uxc81cuxb3c4-1}
+
+\section{Q2. 공법도입에 대한 대신들의 찬성율}\label{q2.-uxacf5uxbc95uxb3c4uxc785uxc5d0-uxb300uxd55c-uxb300uxc2e0uxb4e4uxc758-uxcc2cuxc131uxc728}
+
+\subsection{공법도입과 대신들(집계표)}\label{uxacf5uxbc95uxb3c4uxc785uxacfc-uxb300uxc2e0uxb4e4uxc9d1uxacc4uxd45c}
+
+\subsection{공법도입과 대신들(\%)}\label{uxacf5uxbc95uxb3c4uxc785uxacfc-uxb300uxc2e0uxb4e4}
+
+\section{Q3. 공법도입과 품관촌민들의 찬반}\label{q3.-uxacf5uxbc95uxb3c4uxc785uxacfc-uxd488uxad00uxcd0cuxbbfcuxb4e4uxc758-uxcc2cuxbc18}
+
+\subsection{품관촌민들의 찬반(집계표)}\label{uxd488uxad00uxcd0cuxbbfcuxb4e4uxc758-uxcc2cuxbc18uxc9d1uxacc4uxd45c}
+
+\subsection{품관촌민들의 찬반(\%)}\label{uxd488uxad00uxcd0cuxbbfcuxb4e4uxc758-uxcc2cuxbc18}
+
+\section{Q4. 공법}\label{q4.-uxacf5uxbc95}
+
+\subsection{기본세율}\label{uxae30uxbcf8uxc138uxc728}
+
+\subsection{기본세율(\%)}\label{uxae30uxbcf8uxc138uxc728-1}
+
+\section{Q5. 1423년 조선시대 호구와 인구}\label{q5.-1423uxb144-uxc870uxc120uxc2dcuxb300-uxd638uxad6cuxc640-uxc778uxad6c}
+
+\subsection{호구와 인구}\label{uxd638uxad6cuxc640-uxc778uxad6c}
+
+\subsection{호구와 인구(\%)}\label{uxd638uxad6cuxc640-uxc778uxad6c-1}
+
+\section{Q6. 지방관료와 품관촌민}\label{q6.-uxc9c0uxbc29uxad00uxb8ccuxc640-uxd488uxad00uxcd0cuxbbfc}
+
+\subsection{찬반이 반대인 곳(집계표)}\label{uxcc2cuxbc18uxc774-uxbc18uxb300uxc778-uxacf3uxc9d1uxacc4uxd45c}
+
+\subsection{찬반이 반대인 곳(\%)}\label{uxcc2cuxbc18uxc774-uxbc18uxb300uxc778-uxacf3}
+
+\section{Q7. 부연설명의 효과 : 주당 근로 69시간제 도입 찬반}\label{q7.-uxbd80uxc5f0uxc124uxba85uxc758-uxd6a8uxacfc-uxc8fcuxb2f9-uxadfcuxb85c-69uxc2dcuxac04uxc81c-uxb3c4uxc785-uxcc2cuxbc18}
+
+\subsection{집계}\label{uxc9d1uxacc4-2}
+
+\subsection{\% 비교}\label{uxbe44uxad50-2}
+
+\subsection{\% 합계}\label{uxd569uxacc4-2}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-6}
+
+\section{마감 시간으로부터 제출 시간의 분포}\label{uxb9c8uxac10-uxc2dcuxac04uxc73cuxb85cuxbd80uxd130-uxc81cuxcd9c-uxc2dcuxac04uxc758-uxbd84uxd3ec-3}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c-3}
+
+\subsection{날마다 고르게 제출하는가?}\label{uxb0a0uxb9c8uxb2e4-uxace0uxb974uxac8c-uxc81cuxcd9cuxd558uxb294uxac00-3}
+
+\subsection{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504-3}
+
+\subsection{Red, Black 간에 닮았는가?}\label{red-black-uxac04uxc5d0-uxb2eeuxc558uxb294uxac00-3}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-7}
+
+\chapter{5주차 데이터 실험 집계}\label{uxc8fcuxcc28-uxb370uxc774uxd130-uxc2e4uxd5d8-uxc9d1uxacc4-4}
+
+Placeholder
+
+\section{실험의 목적}\label{uxc2e4uxd5d8uxc758-uxbaa9uxc801-4}
+
+\subsection{Red, Black을 잘못 표시한 사람들}\label{red-blackuxc744-uxc798uxbabb-uxd45cuxc2dcuxd55c-uxc0acuxb78cuxb4e4-4}
+
+\subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black-4}
+
+\section{Q1. 한글의 문자 유형}\label{q1.-uxd55cuxae00uxc758-uxbb38uxc790-uxc720uxd615}
+
+\subsection{한글은 민주 문자}\label{uxd55cuxae00uxc740-uxbbfcuxc8fc-uxbb38uxc790}
+
+\subsection{한글은 민주 문자(\%)}\label{uxd55cuxae00uxc740-uxbbfcuxc8fc-uxbb38uxc790-1}
+
+\section{Q2. 정보혁명과 문자 체계}\label{q2.-uxc815uxbcf4uxd601uxba85uxacfc-uxbb38uxc790-uxccb4uxacc4}
+
+\subsection{정보혁명을 이끄는 문자는 한글(집계표)}\label{uxc815uxbcf4uxd601uxba85uxc744-uxc774uxb044uxb294-uxbb38uxc790uxb294-uxd55cuxae00uxc9d1uxacc4uxd45c}
+
+\subsection{정보혁명을 이끄는 문자는 한글(\%)}\label{uxc815uxbcf4uxd601uxba85uxc744-uxc774uxb044uxb294-uxbb38uxc790uxb294-uxd55cuxae00}
+
+\section{Q3. 알기 힘든 전문 용어}\label{q3.-uxc54cuxae30-uxd798uxb4e0-uxc804uxbb38-uxc6a9uxc5b4}
+
+\subsection{몇 개나 아나요?(집계표)}\label{uxba87-uxac1cuxb098-uxc544uxb098uxc694uxc9d1uxacc4uxd45c}
+
+\subsection{몇 개나 아나요?(\%)}\label{uxba87-uxac1cuxb098-uxc544uxb098uxc694}
+
+\section{Q4. 해방직후 비문해율}\label{q4.-uxd574uxbc29uxc9c1uxd6c4-uxbe44uxbb38uxd574uxc728}
+
+\subsection{집계}\label{uxc9d1uxacc4-3}
+
+\subsection{\%}\label{section-1}
+
+\section{Q5. 세대간 문해력 격차}\label{q5.-uxc138uxb300uxac04-uxbb38uxd574uxb825-uxaca9uxcc28}
+
+\subsection{집계}\label{uxc9d1uxacc4-4}
+
+\subsection{\%}\label{section-2}
+
+\section{Q6. 문해력 격차의 파급효과}\label{q6.-uxbb38uxd574uxb825-uxaca9uxcc28uxc758-uxd30cuxae09uxd6a8uxacfc}
+
+\subsection{집계}\label{uxc9d1uxacc4-5}
+
+\subsection{\%}\label{section-3}
+
+\section{Q7. 프레임을 설정하는 단어의 힘}\label{q7.-uxd504uxb808uxc784uxc744-uxc124uxc815uxd558uxb294-uxb2e8uxc5b4uxc758-uxd798}
+
+\subsection{집계}\label{uxc9d1uxacc4-6}
+
+\subsection{\% 비교.}\label{uxbe44uxad50.-1}
+
+\subsection{\% 합산}\label{uxd569uxc0b0}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-8}
+
+\section{마감 시간으로부터 제출 시간의 분포}\label{uxb9c8uxac10-uxc2dcuxac04uxc73cuxb85cuxbd80uxd130-uxc81cuxcd9c-uxc2dcuxac04uxc758-uxbd84uxd3ec-4}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c-4}
+
+\subsection{날마다 고르게 제출하는가?}\label{uxb0a0uxb9c8uxb2e4-uxace0uxb974uxac8c-uxc81cuxcd9cuxd558uxb294uxac00-4}
+
+\subsection{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504-4}
+
+\subsection{Red, Black 간에 닮았는가?}\label{red-black-uxac04uxc5d0-uxb2eeuxc558uxb294uxac00-4}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-9}
+
+\chapter{국민문해력조사 집계 결과}\label{uxad6duxbbfcuxbb38uxd574uxb825uxc870uxc0ac-uxc9d1uxacc4-uxacb0uxacfc}
+
+Placeholder
+
+\subsection{\texorpdfstring{\texttt{factor} 변환}{factor 변환}}\label{factor-uxbcc0uxd658}
+
+\section{응답 집계}\label{uxc751uxb2f5-uxc9d1uxacc4}
+
+\section{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504-5}
+
+\subsection{\texorpdfstring{\texttt{barplot}}{barplot}}\label{barplot}
+
+\subsection{ggplot}\label{ggplot}
+
+\section{문해력 점수 계산}\label{uxbb38uxd574uxb825-uxc810uxc218-uxacc4uxc0b0}
+
+\subsection{정답과 대조하여 R(Right)/W(Wrong) 표시}\label{uxc815uxb2f5uxacfc-uxb300uxc870uxd558uxc5ec-rrightwwrong-uxd45cuxc2dc}
+
+\subsection{학생별 점수 산출}\label{uxd559uxc0dduxbcc4-uxc810uxc218-uxc0b0uxcd9c}
+
+\section{Red and Black 비교}\label{red-and-black-uxbe44uxad50}
+
+\subsection{Summary}\label{summary}
+
+\subsection{줄기-잎 그림}\label{uxc904uxae30-uxc78e-uxadf8uxb9bc}
+
+\subsection{Box Plots}\label{box-plots}
+
+\subsection{QQ plot}\label{qq-plot}
+
+\subsection{ECDF plot}\label{ecdf-plot}
+
+\subsection{t-test}\label{t-test}
+
+\section{문해력 등급 판정}\label{uxbb38uxd574uxb825-uxb4f1uxae09-uxd310uxc815}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c-5}
+
+\subsection{Red and Black}\label{red-and-black}
+
+\section{유형별 정답률}\label{uxc720uxd615uxbcc4-uxc815uxb2f5uxb960}
+
+\section{어려운 문제?}\label{uxc5b4uxb824uxc6b4-uxbb38uxc81c}
+
+\subsection{정답률 80\% 이하}\label{uxc815uxb2f5uxb960-80-uxc774uxd558}
+
+\subsection{정답률 70\% 이하}\label{uxc815uxb2f5uxb960-70-uxc774uxd558}
+
+\subsection{정답률 60\% 이하}\label{uxc815uxb2f5uxb960-60-uxc774uxd558}
+
+\subsection{정답률 50\% 이하}\label{uxc815uxb2f5uxb960-50-uxc774uxd558}
+
+\section{정답률이 낮은 문제들}\label{uxc815uxb2f5uxb960uxc774-uxb0aeuxc740-uxbb38uxc81cuxb4e4}
+
+\subsection{문6.}\label{uxbb386.}
+
+\subsection{문9.}\label{uxbb389.}
+
+\subsection{문12.}\label{uxbb3812.}
+
+\subsection{문15.}\label{uxbb3815.}
+
+\subsection{문17.}\label{uxbb3817.}
+
+\subsection{문22.}\label{uxbb3822.}
+
+\chapter{6주차 데이터 실험 집계}\label{uxc8fcuxcc28-uxb370uxc774uxd130-uxc2e4uxd5d8-uxc9d1uxacc4-5}
+
+Placeholder
+
+\section{실험의 목적}\label{uxc2e4uxd5d8uxc758-uxbaa9uxc801-5}
+
+\subsection{Red, Black을 잘못 표시한 사람들}\label{red-blackuxc744-uxc798uxbabb-uxd45cuxc2dcuxd55c-uxc0acuxb78cuxb4e4-5}
+
+\subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black-5}
+
+\section{Q1. 월간 독서율}\label{q1.-uxc6d4uxac04-uxb3c5uxc11cuxc728}
+
+\subsection{집계}\label{uxc9d1uxacc4-7}
+
+\subsection{\%}\label{section-4}
+
+\section{Q2. 지역 및 지역크기별 가구수 비례 무작위추출법}\label{q2.-uxc9c0uxc5ed-uxbc0f-uxc9c0uxc5eduxd06cuxae30uxbcc4-uxac00uxad6cuxc218-uxbe44uxb840-uxbb34uxc791uxc704uxcd94uxcd9cuxbc95}
+
+\subsection{집계}\label{uxc9d1uxacc4-8}
+
+\subsection{\%}\label{section-5}
+
+\section{Q3. 한달 독서량의 분포}\label{q3.-uxd55cuxb2ec-uxb3c5uxc11cuxb7c9uxc758-uxbd84uxd3ec}
+
+\subsection{집계}\label{uxc9d1uxacc4-9}
+
+\subsection{\%}\label{section-6}
+
+\section{Q4. 최근 1개월간 독서량}\label{q4.-uxcd5cuxadfc-1uxac1cuxc6d4uxac04-uxb3c5uxc11cuxb7c9}
+
+\subsection{집계}\label{uxc9d1uxacc4-10}
+
+\subsection{\%}\label{section-7}
+
+\section{Q5. 20대의 연간독서율}\label{q5.-20uxb300uxc758-uxc5f0uxac04uxb3c5uxc11cuxc728}
+
+\subsection{집계}\label{uxc9d1uxacc4-11}
+
+\subsection{\%}\label{section-8}
+
+\section{Q6. 50대의 연간독서율}\label{q6.-50uxb300uxc758-uxc5f0uxac04uxb3c5uxc11cuxc728}
+
+\subsection{집계}\label{uxc9d1uxacc4-12}
+
+\subsection{\%}\label{section-9}
+
+\section{Q7. The more, the better? : 내가 남보다, 혹은 남이 나보다}\label{q7.-the-more-the-better-uxb0b4uxac00-uxb0a8uxbcf4uxb2e4-uxd639uxc740-uxb0a8uxc774-uxb098uxbcf4uxb2e4}
+
+\subsection{집계}\label{uxc9d1uxacc4-13}
+
+\subsection{\% 비교.}\label{uxbe44uxad50.-2}
+
+\subsection{합산(\%)}\label{uxd569uxc0b0-1}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-10}
+
+\section{마감 시간으로부터 제출 시간의 분포}\label{uxb9c8uxac10-uxc2dcuxac04uxc73cuxb85cuxbd80uxd130-uxc81cuxcd9c-uxc2dcuxac04uxc758-uxbd84uxd3ec-5}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c-6}
+
+\subsection{날마다 고르게 제출하는가?}\label{uxb0a0uxb9c8uxb2e4-uxace0uxb974uxac8c-uxc81cuxcd9cuxd558uxb294uxac00-5}
+
+\subsection{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504-6}
+
+\subsection{Red, Black 간에 닮았는가?}\label{red-black-uxac04uxc5d0-uxb2eeuxc558uxb294uxac00-5}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-11}
+
+\chapter{7주차 데이터 실험 집계}\label{uxc8fcuxcc28-uxb370uxc774uxd130-uxc2e4uxd5d8-uxc9d1uxacc4-6}
+
+Placeholder
+
+\section{실험의 목적}\label{uxc2e4uxd5d8uxc758-uxbaa9uxc801-6}
+
+\subsection{Red, Black을 잘못 표시한 사람들}\label{red-blackuxc744-uxc798uxbabb-uxd45cuxc2dcuxd55c-uxc0acuxb78cuxb4e4-6}
+
+\subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black-6}
+
+\section{Q1. 통계학의 기본원리}\label{q1.-uxd1b5uxacc4uxd559uxc758-uxae30uxbcf8uxc6d0uxb9ac}
+
+\subsection{공평하게 추출하면 \ldots{}}\label{uxacf5uxd3c9uxd558uxac8c-uxcd94uxcd9cuxd558uxba74}
+
+\subsection{공평하게 추출하면 \ldots{} (\%)}\label{uxacf5uxd3c9uxd558uxac8c-uxcd94uxcd9cuxd558uxba74-1}
+
+\section{Q2. 리터러리 다이제스트의 실패}\label{q2.-uxb9acuxd130uxb7ecuxb9ac-uxb2e4uxc774uxc81cuxc2a4uxd2b8uxc758-uxc2e4uxd328}
+
+\subsection{Selection Bias}\label{selection-bias}
+
+\subsection{Selection Bias (\%)}\label{selection-bias-1}
+
+\section{Q3. 1948년, 여론조사가 듀이를 당선시킨 해}\label{q3.-1948uxb144-uxc5ecuxb860uxc870uxc0acuxac00-uxb4c0uxc774uxb97c-uxb2f9uxc120uxc2dcuxd0a8-uxd574}
+
+\subsection{할당법의 문제점}\label{uxd560uxb2f9uxbc95uxc758-uxbb38uxc81cuxc810}
+
+\subsection{할당법의 문제점(\%)}\label{uxd560uxb2f9uxbc95uxc758-uxbb38uxc81cuxc810-1}
+
+\section{Q4. 1948 미 대선 이후}\label{q4.-1948-uxbbf8-uxb300uxc120-uxc774uxd6c4}
+
+\subsection{확률적 표본추출방법 도입}\label{uxd655uxb960uxc801-uxd45cuxbcf8uxcd94uxcd9cuxbc29uxbc95-uxb3c4uxc785}
+
+\subsection{확률적 표본추출방법 도입 \ldots{} (\%)}\label{uxd655uxb960uxc801-uxd45cuxbcf8uxcd94uxcd9cuxbc29uxbc95-uxb3c4uxc785-1}
+
+\section{Q5. 표본오차를 반으로 줄이려면?}\label{q5.-uxd45cuxbcf8uxc624uxcc28uxb97c-uxbc18uxc73cuxb85c-uxc904uxc774uxb824uxba74}
+
+\subsection{4배로 늘려야}\label{uxbc30uxb85c-uxb298uxb824uxc57c}
+
+\subsection{4배로 눌려야 (\%)}\label{uxbc30uxb85c-uxb20cuxb824uxc57c}
+
+\section{Q6. 대선 여론조사의 목표모집단?}\label{q6.-uxb300uxc120-uxc5ecuxb860uxc870uxc0acuxc758-uxbaa9uxd45cuxbaa8uxc9d1uxb2e8}
+
+\subsection{선거당일 투표하는 유권자 전체}\label{uxc120uxac70uxb2f9uxc77c-uxd22cuxd45cuxd558uxb294-uxc720uxad8cuxc790-uxc804uxccb4}
+
+\subsection{선거당일 투표하는 유권자 전체(\%)}\label{uxc120uxac70uxb2f9uxc77c-uxd22cuxd45cuxd558uxb294-uxc720uxad8cuxc790-uxc804uxccb4-1}
+
+\section{Wason Selection Task}\label{wason-selection-task}
+
+\subsection{Red. Q7에 추상적 문제, Q8에 구체적 문제}\label{red.-q7uxc5d0-uxcd94uxc0c1uxc801-uxbb38uxc81c-q8uxc5d0-uxad6cuxccb4uxc801-uxbb38uxc81c}
+
+\subsection{Black. Q7에 구체적 문제, Q8에 추상적 문제}\label{black.-q7uxc5d0-uxad6cuxccb4uxc801-uxbb38uxc81c-q8uxc5d0-uxcd94uxc0c1uxc801-uxbb38uxc81c}
+
+\section{Q7. Red에 추상적 질문, Black에 구체적 질문}\label{q7.-reduxc5d0-uxcd94uxc0c1uxc801-uxc9c8uxbb38-blackuxc5d0-uxad6cuxccb4uxc801-uxc9c8uxbb38}
+
+\subsection{집계}\label{uxc9d1uxacc4-14}
+
+\subsection{\% 비교}\label{uxbe44uxad50-3}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-12}
+
+\section{Q8. Red에 구체적 질문, Black에 추상적 질문}\label{q8.-reduxc5d0-uxad6cuxccb4uxc801-uxc9c8uxbb38-blackuxc5d0-uxcd94uxc0c1uxc801-uxc9c8uxbb38}
+
+\subsection{집계}\label{uxc9d1uxacc4-15}
+
+\subsection{\% 비교.}\label{uxbe44uxad50.-3}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-13}
+
+\subsection{정답율 비교}\label{uxc815uxb2f5uxc728-uxbe44uxad50}
+
+\section{Q9. 인지적 편향과 오류}\label{q9.-uxc778uxc9c0uxc801-uxd3b8uxd5a5uxacfc-uxc624uxb958}
+
+\subsection{집계}\label{uxc9d1uxacc4-16}
+
+\subsection{\% 비교.}\label{uxbe44uxad50.-4}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-14}
+
+\section{학습 순서의 영향}\label{uxd559uxc2b5-uxc21cuxc11cuxc758-uxc601uxd5a5}
+
+\subsection{집계표}\label{uxc9d1uxacc4uxd45c-2}
+
+\subsection{\% 비교}\label{uxbe44uxad50-4}
+
+\subsection{합산}\label{uxd569uxc0b0-2}
+
+\subsection{집계표}\label{uxc9d1uxacc4uxd45c-3}
+
+\subsection{\% 비교}\label{uxbe44uxad50-5}
+
+\subsection{Barplot}\label{barplot-1}
+
+\section{마감 시간으로부터 제출 시간의 분포}\label{uxb9c8uxac10-uxc2dcuxac04uxc73cuxb85cuxbd80uxd130-uxc81cuxcd9c-uxc2dcuxac04uxc758-uxbd84uxd3ec-6}
+
+\subsection{분포표}\label{uxbd84uxd3ecuxd45c-7}
+
+\subsection{날마다 고르게 제출하는가?}\label{uxb0a0uxb9c8uxb2e4-uxace0uxb974uxac8c-uxc81cuxcd9cuxd558uxb294uxac00-6}
+
+\subsection{막대그래프}\label{uxb9c9uxb300uxadf8uxb798uxd504-7}
+
+\subsection{Red, Black 간에 닮았는가?}\label{red-black-uxac04uxc5d0-uxb2eeuxc558uxb294uxac00-6}
+
+\subsection{Mosaic Plot}\label{mosaic-plot-15}
+
+\end{document}

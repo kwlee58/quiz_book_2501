@@ -1,0 +1,33 @@
+h1:국민문해력조사-집계-결과 국민문해력조사 집계 결과
+h2:응답-집계 응답 집계
+tab:echo %
+h2:막대그래프 막대그래프
+h2:문해력-점수-계산 문해력 점수 계산
+h3:정답과-대조하여-rrightwwrong-표시 정답과 대조하여 R(Right)/W(Wrong) 표시
+h3:학생별-점수-산출 학생별 점수 산출
+h2:red-and-black-비교 Red and Black 비교
+h3:summary Summary
+h3:줄기-잎-그림 줄기-잎 그림
+h3:box-plots Box Plots
+h3:qq-plot QQ plot
+h3:ecdf-plot ECDF plot
+h3:t-test t-test
+h2:문해력-등급-판정 문해력 등급 판정
+h3:분포표 분포표
+tab:literacy 문해력 등급 분포(%)
+h3:red-and-black Red and Black
+tab:literacy 그룹별 문해력 등급 분포
+h2:유형별-정답률 유형별 정답률
+h2:어려운-문제 어려운 문제?
+h3:정답률-80-이하 정답률 80% 이하
+h3:정답률-70-이하 정답률 70% 이하
+h3:정답률-60-이하 정답률 60% 이하
+h3:정답률-50-이하 정답률 50% 이하
+h2:정답률이-낮은-문제들 정답률이 낮은 문제들
+h3:문6. 문6.
+h3:문9. 문9.
+h3:문12. 문12.
+h3:문15. 문15.
+h3:문17. 문17.
+h3:문22. 문22.
+
