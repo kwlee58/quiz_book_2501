@@ -16,7 +16,16 @@ rmd_files: [
   "quiz250331_Report_v4.Rmd",
   "Literacy_google_p_250331_v3.Rmd",
   "quiz250407_Report_v4.Rmd",
-  "quiz250414_Report_v4.Rmd"   # 부록 또는 마무리
+  "quiz250414_Report_v4.Rmd",
+  "quiz241021_Report_v3.Rmd",
+  "Oxford_Happiness2402_Report.Rmd",
+  "quiz241028_Report_v3.Rmd",
+  "quiz241104_Report_v3.Rmd",
+  "food_comp2402.Rmd",
+  "quiz241111_Report_v4.Rmd",
+  "BFI_MI_241111_Summary_p.Rmd",
+  "quiz241118_Report_v4.Rmd",
+  "quiz241125_Report_v4.Rmd" # 부록 또는 마무리
 ]
 
 # 참고자료에서 BibTeX 활용 시

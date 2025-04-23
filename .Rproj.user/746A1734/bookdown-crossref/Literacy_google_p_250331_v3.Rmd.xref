@@ -1,6 +1,5 @@
 h1:국민문해력조사-집계-결과 국민문해력조사 집계 결과
 h2:응답-집계 응답 집계
-tab:echo %
 h2:막대그래프 막대그래프
 h2:문해력-점수-계산 문해력 점수 계산
 h3:정답과-대조하여-rrightwwrong-표시 정답과 대조하여 R(Right)/W(Wrong) 표시
@@ -14,9 +13,7 @@ h3:ecdf-plot ECDF plot
 h3:t-test t-test
 h2:문해력-등급-판정 문해력 등급 판정
 h3:분포표 분포표
-tab:literacy 문해력 등급 분포(%)
 h3:red-and-black Red and Black
-tab:literacy 그룹별 문해력 등급 분포
 h2:유형별-정답률 유형별 정답률
 h2:어려운-문제 어려운 문제?
 h3:정답률-80-이하 정답률 80% 이하

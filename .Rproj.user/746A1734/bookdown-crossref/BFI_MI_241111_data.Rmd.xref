@@ -1,0 +1,11 @@
+h1:data Data
+h2:출석부 출석부
+h2:bfi BFI
+h2:mi MI
+h2:학번오류-불참자 학번오류, 불참자
+h2:time Time
+h3:bfi-1 BFI
+h3:mi-1 MI
+h2:working-data Working Data
+h3:save-data Save Data
+

@@ -1,0 +1,3 @@
+"0","qqplot(x = score[Red], y = score[Black], "
+"0","       xlab = ""Red"", ylab = ""Black"", "
+"0","       xlim = c(60, 100), ylim = c(60, 100))"

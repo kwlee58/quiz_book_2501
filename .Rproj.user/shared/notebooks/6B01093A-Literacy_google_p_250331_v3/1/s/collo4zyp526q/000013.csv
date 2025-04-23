@@ -1,0 +1,5 @@
+"0","#> 문해력 집계에 필요한 변수만 추출. "
+"0","# literacy <- literacy_roll[, c(2:27)] "
+"0","literacy <- literacy_roll %>%"
+"0","  select(-1)"
+"0","kable(literacy)"

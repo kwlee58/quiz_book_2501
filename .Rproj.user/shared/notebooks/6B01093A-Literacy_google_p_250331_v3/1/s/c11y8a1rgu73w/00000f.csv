@@ -1,0 +1,34 @@
+"0","grade_tbl_group <- literacy %$%"
+"0","  table(""Group"" = .$group, ""문해력 등급 분포"" = grade, exclude = NULL)"
+"0","grade_tbl_group %>%"
+"0","  cbind(""계"" = rowSums(.)) %>%"
+"0","  rbind(""계"" = colSums(.)) %>%"
+"0","  pander(caption = ""그룹별 문해력 등급 분포"")"
+"1","
+---------------------------------------
+&nbsp;         I   II   III    IV    계
+----------- ---- ---- ----- ----- -----
+**Red**        6   27    24   213   270
+
+**Black**      7   14    31   224   276
+
+**계**        13   41    55   437   546
+---------------------------------------
+
+Table: 그룹별 문해력 등급 분포
+
+"
+"0","grade_tbl_group %>%"
+"0","  `[`(, -5) %>%"
+"0","  chisq.test(simulate.p.value = FALSE) %>%"
+"0","  pander"
+"1","
+-------------------------------
+  Test statistic   df   P value
+---------------- ---- ---------
+           5.301    3     0.151
+-------------------------------
+
+Table: Pearson's Chi-squared test: `.`
+
+"

@@ -1,0 +1,39 @@
+h1:주차-데이터-실험-집계 13주차 데이터 실험 집계
+h2:실험의-목적 실험의 목적
+h3:red-black을-잘못-표시한-사람들 Red, Black을 잘못 표시한 사람들
+h3:응답인원의-red-black 응답인원의 Red, Black
+h2:q1.-birthday-problem Q1. Birthday Problem
+h3:어느-날에-몇-명씩-생일이-같은가 어느 날에 몇 명씩 생일이 같은가?
+h3:생일이-같은-사람은-몇-명-정도-기대되는가 생일이 같은 사람은 몇 명 정도 기대되는가?
+h4:기대되는-인원 기대되는 인원
+h4:표준오차 표준오차
+h3:태어난-달의-분포는 태어난 달의 분포는?
+h3:월별로-고르게-출생하였는가 월별로 고르게 출생하였는가?
+h3:red-and-black Red and Black
+h2:q2.-matching-problem Q2. Matching Problem
+h3:응답-분포 응답 분포
+h3:응답분포가수별 응답분포(가수별 %)
+h3:정답갯수의-분포 정답갯수의 분포
+h3:observed-vs-expected Observed vs Expected
+h3:맷칭-모델-카이제곱-적합도-테스트 맷칭 모델 카이제곱 적합도 테스트
+h3:red-and-black-1 Red and Black
+h2:q3.-직관과-어긋나는-용어 Q3. 직관과 어긋나는 용어
+h3:연비 연비
+h3:집계 집계
+h3:비교. % 비교.
+h3:통합 %(통합)
+h3:학기별-응답-요약 학기별 응답 요약
+h2:q4.-monty-hall-문제 Q4. Monty Hall 문제
+h3:문항-배열-효과 문항 배열 효과?
+h3:집계-1 집계
+h3:비교.-1 % 비교.
+h3:합산 합산(%)
+h3:mosaic-plot Mosaic Plot
+h3:학기별-응답-요약-1 학기별 응답 요약
+h2:마감-시간으로부터-제출-시간의-분포 마감 시간으로부터 제출 시간의 분포
+h3:분포표 분포표
+h3:날마다-고르게-제출하는가 날마다 고르게 제출하는가?
+h3:막대그래프 막대그래프
+h3:red-black-간에-닮았는가 Red, Black 간에 닮았는가?
+h3:mosaic-plot-1 Mosaic Plot
+

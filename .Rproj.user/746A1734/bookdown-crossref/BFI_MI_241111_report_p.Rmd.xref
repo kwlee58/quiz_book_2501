@@ -1,0 +1,22 @@
+h1:data-reading Data Reading
+h2:필수-자료-읽어들이기 필수 자료 읽어들이기
+h1:big-five-inventory-first Big Five Inventory First
+h2:각-특성에-맞는-점수끼리-합산. 각 특성에 맞는 점수끼리 합산.
+h2:손으로-계산한-성격특성점수와-비교 손으로 계산한 성격특성점수와 비교
+h2:점수에-따른-수준-판정 점수에 따른 수준 판정
+h3:ifelse 
+h3:mapply 
+h2:자가-산출-성격특성과-비교 자가 산출 성격특성과 비교
+h2:각-성격-특성의-분포를-table로-요약 각 성격 특성의 분포를 로 요약
+h2:출석부에-합치기 출석부에 합치기
+h1:다중지능-점수-분석 다중지능 점수 분석
+h2:for-loop  loop
+h2:rowsums rowSums
+h2:sapply 
+h3:전체-출석부에-합치기 전체 출석부에 합치기
+h1:두-data-frame을-하나로 두 data frame을 하나로
+h2:결석생-확인 결석생 확인
+h3:bfi BFI
+h3:mi MI
+h2:save Save
+

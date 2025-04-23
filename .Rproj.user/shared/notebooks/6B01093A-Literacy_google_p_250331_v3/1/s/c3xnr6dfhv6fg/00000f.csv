@@ -1,0 +1,4 @@
+"0","score %>%"
+"0","  `[`(Red & !is.na(score)) %>%"
+"0","  ecdf %>%"
+"0","  plot(xlim = score %>% range(na.rm = TRUE), col = ""red"", main = ""ECDF"")"

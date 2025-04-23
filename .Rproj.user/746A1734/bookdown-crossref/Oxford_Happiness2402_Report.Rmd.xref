@@ -1,0 +1,22 @@
+h1:옥스포드-행복도-조사-집계 옥스포드 행복도 조사 집계
+h2:실험의-목적 실험의 목적
+h3:red-black을-잘못-표시한-사람들 Red, Black을 잘못 표시한 사람들
+h3:응답인원의-red-black 응답인원의 Red, Black
+h2:행복-점수-비교 행복 점수 비교
+h3:summary 
+h3:t.test-on-means  on means
+h3:table 
+h3:chisq.test 
+h3:백분율 백분율(%)
+h3:geom_boxplot 
+h2:소요시간-비교 소요시간 비교
+h3:summary-1 
+h3:geom_boxplot-1 
+h3:t.test-on-means-1  on means
+h2:마감-시간으로부터-제출-시간의-분포 마감 시간으로부터 제출 시간의 분포
+h3:분포표 분포표
+h3:날마다-고르게-제출하는가 날마다 고르게 제출하는가?
+h3:막대그래프 막대그래프
+h3:red국문-black영문-간에-닮았는가 Red(국문), Black(영문) 간에 닮았는가?
+h3:mosaic-plot Mosaic Plot
+

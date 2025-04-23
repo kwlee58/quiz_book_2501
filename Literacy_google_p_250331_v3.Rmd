@@ -18,7 +18,7 @@ showtext_auto()
 # Pander options for table formatting
 panderOptions('table.split.table', Inf)
 panderOptions('table.alignment.rownames', 'left')
-panderOptions('table.alignment.default', 'right')
+panderOptions('table.alignment.default', 'left')
 options(width=180)
 ```
 
@@ -153,12 +153,12 @@ str(literacy_df)
 ```{r, echo = FALSE}
 literacy_tbl <- literacy_df %>%
   sapply(FUN = table, useNA = "no")
-kable(literacy_tbl, caption = "Counts")
+pander(literacy_tbl, caption = "Counts")
 literacy_ptbl <- literacy_tbl %>%
   apply(MARGIN = 2, FUN = prop.table) %>%
   `*`(100) %>%
   round(digits = 0)
-kable(literacy_ptbl, caption = "%")
+pander(literacy_ptbl, caption = "%")
 label_ptbl <- literacy_ptbl %>%
   format(digits = 2, nsmall = 0) %>%
   paste0("%") %>%
@@ -420,7 +420,7 @@ grade_tbl <- grade %>%
   c("계" = sum(.))
 grade_tbl %>%
   t %>%
-  kable(caption = "문해력 등급 분포")
+  pander(caption = "문해력 등급 분포")
 grade %>%
   table(useNA = "no") %>%
   prop.table %>%
@@ -428,7 +428,7 @@ grade %>%
   round(2) %>%
   c("계" = sum(.)) %>%
   t %>%
-  kable(caption = "문해력 등급 분포(%)")
+  pander(caption = "문해력 등급 분포(%)")
 ```
 
 ### Red and Black 
@@ -441,7 +441,7 @@ grade_tbl_group <- literacy %$%
 grade_tbl_group %>%
   cbind("계" = rowSums(.)) %>%
   rbind("계" = colSums(.)) %>%
-  kable(caption = "그룹별 문해력 등급 분포")
+  pander(caption = "그룹별 문해력 등급 분포")
 grade_tbl_group %>%
   `[`(, -5) %>%
   chisq.test(simulate.p.value = FALSE) %>%
@@ -532,7 +532,7 @@ rate_item_type <- data.frame("유형" = type_kr, "정답률" = rate_item)
 dimnames(rate_item_type) <- list("문항" = paste0("문", 1:25), "유형과 정답률" = c("유형", "정답률(%)"))
 rate_item_type %>%
   format(digits = 3, nsmall = 1) %>%
-  kable(align = c("l", "r"))
+  pander(align = c("l", "r"))
 ```
 
 <!--* `replace()`를 이용하면, 

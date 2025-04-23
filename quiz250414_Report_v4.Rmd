@@ -18,7 +18,7 @@ font_add(family = "kopub",
 showtext_auto()
 panderOptions('table.split.table', Inf)
 panderOptions('table.alignment.rownames', 'left')
-panderOptions('table.alignment.default', 'right')
+panderOptions('table.alignment.default', 'left')
 options(width=180)
 ```
 
