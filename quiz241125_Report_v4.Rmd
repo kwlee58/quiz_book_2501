@@ -1395,3 +1395,8 @@ image_animate(img, fps = 1, loop = 0)
 saveRDS(quiz, file = "./quiz241125.RDS")
 # save.image("./quiz241125.RData")
 ```
+
+## 참고문헌
+
+::: {#refs}
+:::

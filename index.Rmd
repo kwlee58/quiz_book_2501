@@ -6,13 +6,19 @@ site: bookdown::bookdown_site
 documentclass: book
 output:
   bookdown::pdf_book:
+    citation_package: natbib  # 또는 biblatex
     latex_engine: xelatex
     keep_tex: true
     toc: true
     number_sections: true
     dev: cairo_pdf
+    bibliography: references.bib
   bookdown::gitbook:
     css: style.css
+    config:
+      toc:
+        collapse: none
+    bibliography: references.bib
 header-includes:
   - \usepackage{fontspec}
   - \setmainfont{KoPubWorldDotum}
@@ -34,4 +40,6 @@ header-includes:
 R과 R Markdown을 기반으로 자동화된 시각화 및 분석을 포함합니다.
 
 ---
+
+
 
