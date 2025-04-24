@@ -1,0 +1,6 @@
+# 참고문헌 {-}
+
+\cleardoublepage
+\phantomsection
+\bibliographystyle{apalike}
+\bibliography{references}

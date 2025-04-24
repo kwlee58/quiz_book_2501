@@ -1,0 +1,33 @@
+\
+---
+title: "Quiz Reports: 2025 Spring"
+author: "이기원 (Kee-Won Lee)"
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+site: bookdown::bookdown_site
+documentclass: book
+
+output:
+  bookdown::pdf_book:
+    citation_package: biblatex
+    latex_engine: xelatex
+    keep_tex: true
+    toc: true
+    number_sections: true
+    dev: cairo_pdf
+  bookdown::gitbook:
+    css: style.css
+    config:
+      toc:
+        collapse: none
+
+bibliography: references.bib
+
+header-includes:
+  - \usepackage{fontspec}
+  - \setmainfont{KoPubWorldDotum}
+  - \usepackage{titlesec}
+  - \titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{제~\thechapter~장}{1em}{}
+  - \renewcommand{\figurename}{그림}
+  - \renewcommand{\tablename}{표}
+  - \renewcommand{\bibname}{참고문헌}
+---

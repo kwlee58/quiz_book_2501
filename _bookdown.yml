@@ -4,7 +4,8 @@ delete_merged_file: true                  # 중간 생성 파일(_main.md 등) �
 language:
   label: "kr"                             # figure, table 같은 캡션 라벨을 한글화
   ui:
-    chapter_name: "제 "                   # 장 번호 앞에 붙는 접두어 (예: "제 1장")
+    chapter_name: "제 " # 장 번호 앞에 붙는 접두어 (예: "제 1장")
+    bibliography_title: "참고문헌" 
 
 # 목차에 포함될 Rmd 파일의 순서 지정
 rmd_files: [
@@ -25,8 +26,9 @@ rmd_files: [
   "quiz241111_Report_v4.Rmd",
   "BFI_MI_241111_Summary_p.Rmd",
   "quiz241118_Report_v4.Rmd",
-  "quiz241125_Report_v4.Rmd" # 부록 또는 마무리
+  "quiz241125_Report_v4.Rmd",
+  "99_references.Rmd" # 부록 또는 마무리
 ]
 
 # 참고자료에서 BibTeX 활용 시
-# bibliography: [references.bib]
+bibliography: [references.bib]

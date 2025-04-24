@@ -63,13 +63,49 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{fontspec}
 \setmainfont{KoPubWorldDotum}
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{제~\thechapter~장}{1em}{}
+\renewcommand{\figurename}{그림}
+\renewcommand{\tablename}{표}
+\renewcommand{\bibname}{참고문헌}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage[]{natbib}
-\bibliographystyle{plainnat}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -7839,9 +7875,9 @@ Black(구글예습퀴즈)
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(랜덤화출석부)} & 126 & 2 \\
-\textbf{Black(랜덤화출석부)} & 0 & 146 \\
-\textbf{계} & 126 & 148 \\
+\textbf{Red(랜덤화출석부)} & 131 & 2 \\
+\textbf{Black(랜덤화출석부)} & 0 & 147 \\
+\textbf{계} & 131 & 149 \\
 \end{longtable}
 
 랜덤화출석부에 있는 Red, Black 과 실제 구글설문에 올린 Red, Black 이 다른 사람들의 수효는 2명입니다.
@@ -7878,9 +7914,9 @@ Red, Black 을 잘못 선택한 2명을 랜덤하게 둘로 나눌 때, 실제�
 
 \subsection{응답인원의 Red, Black}\label{uxc751uxb2f5uxc778uxc6d0uxc758-red-black-6}
 
-Red 로 응답한 인원은 126명, Black 에 응답한 인원은 148명입니다.
+Red 로 응답한 인원은 131명, Black 에 응답한 인원은 149명입니다.
 
-전체 응답인원 274 명을 랜덤하게 둘로 나눌 때 어느 한 쪽의 기대인원은 전체 응답인원의 절반인 137명이고, 표준오차는 전체 응답인원의 제곱근에 1/2을 곱해 준 8.3 명입니다.
+전체 응답인원 280 명을 랜덤하게 둘로 나눌 때 어느 한 쪽의 기대인원은 전체 응답인원의 절반인 140명이고, 표준오차는 전체 응답인원의 제곱근에 1/2을 곱해 준 8.4 명입니다.
 
 따라서 Red, Black 각 그룹에 관찰된 인원은 기대인원으로부터 표준오차 범위 안에 들어갑니다.
 
@@ -7915,9 +7951,9 @@ Red 로 응답한 인원은 126명, Black 에 응답한 인원은 148명입니�
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red} & 95 & 2 & 3 & 27 & 127 \\
-\textbf{Black} & 112 & 5 & 2 & 29 & 148 \\
-\textbf{계} & 207 & 7 & 5 & 56 & 275 \\
+\textbf{Red} & 99 & 2 & 3 & 28 & 132 \\
+\textbf{Black} & 113 & 5 & 2 & 29 & 149 \\
+\textbf{계} & 212 & 7 & 5 & 57 & 281 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -7947,12 +7983,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1.358 & 3 & 0.7155 \\
+1.404 & 3 & 0.7045 \\
 \end{longtable}
 
 Q1의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 1.36, 자유도는 3 , p-value 는 0.72이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 1.40, 자유도는 3 , p-value 는 0.70이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -7980,10 +8016,10 @@ Q1의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-75.3 & 2.5 & 1.8 & 20.4 & 100.0 \\
+75.4 & 2.5 & 1.8 & 20.3 & 100.0 \\
 \end{longtable}
 
-정답률은 Red, Black 을 합하여 계산하는데, 75.3(\%) 입니다.
+정답률은 Red, Black 을 합하여 계산하는데, 75.4(\%) 입니다.
 
 \section{Q2. 리터러리 다이제스트의 실패}\label{q2.-uxb9acuxd130uxb7ecuxb9ac-uxb2e4uxc774uxc81cuxc2a4uxd2b8uxc758-uxc2e4uxd328}
 
@@ -8016,9 +8052,9 @@ Panel Bias
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red} & 86 & 17 & 22 & 2 & 127 \\
-\textbf{Black} & 101 & 14 & 25 & 8 & 148 \\
-\textbf{계} & 187 & 31 & 47 & 10 & 275 \\
+\textbf{Red} & 91 & 17 & 22 & 2 & 132 \\
+\textbf{Black} & 102 & 14 & 25 & 8 & 149 \\
+\textbf{계} & 193 & 31 & 47 & 10 & 281 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -8048,12 +8084,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-3.703 & 3 & 0.2954 \\
+3.694 & 3 & 0.2965 \\
 \end{longtable}
 
 Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 3.70, 자유도는 3, p-value 는 0.30이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 3.69, 자유도는 3, p-value 는 0.30이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -8081,10 +8117,10 @@ Panel Bias
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-68.0 & 11.3 & 17.1 & 3.6 & 100.0 \\
+68.7 & 11.0 & 16.7 & 3.6 & 100.0 \\
 \end{longtable}
 
-정답률은 Red, Black 을 합하여 계산하는데, 68.0(\%) 입니다.
+정답률은 Red, Black 을 합하여 계산하는데, 68.7(\%) 입니다.
 
 \section{Q3. 1948년, 여론조사가 듀이를 당선시킨 해}\label{q3.-1948uxb144-uxc5ecuxb860uxc870uxc0acuxac00-uxb4c0uxc774uxb97c-uxb2f9uxc120uxc2dcuxd0a8-uxd574}
 
@@ -8117,9 +8153,9 @@ RDD
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red} & 10 & 93 & 19 & 5 & 127 \\
-\textbf{Black} & 14 & 96 & 34 & 4 & 148 \\
-\textbf{계} & 24 & 189 & 53 & 9 & 275 \\
+\textbf{Red} & 10 & 97 & 20 & 5 & 132 \\
+\textbf{Black} & 14 & 97 & 34 & 4 & 149 \\
+\textbf{계} & 24 & 194 & 54 & 9 & 281 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -8149,12 +8185,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-3.487 & 3 & 0.3224 \\
+3.391 & 3 & 0.3351 \\
 \end{longtable}
 
 Q3의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 3.49, 자유도는 3, p-value 는 0.32이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 3.39, 자유도는 3, p-value 는 0.34이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -8182,10 +8218,10 @@ RDD
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-8.7 & 68.7 & 19.3 & 3.3 & 100.0 \\
+8.5 & 69.0 & 19.2 & 3.2 & 100.0 \\
 \end{longtable}
 
-정답률은 Red, Black 을 합하여 계산하는데, 68.7(\%) 입니다.
+정답률은 Red, Black 을 합하여 계산하는데, 69.0(\%) 입니다.
 
 \section{Q4. 1948 미 대선 이후}\label{q4.-1948-uxbbf8-uxb300uxc120-uxc774uxd6c4}
 
@@ -8218,9 +8254,9 @@ RDD도입
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red} & 89 & 14 & 14 & 10 & 127 \\
-\textbf{Black} & 114 & 11 & 6 & 17 & 148 \\
-\textbf{계} & 203 & 25 & 20 & 27 & 275 \\
+\textbf{Red} & 93 & 15 & 14 & 10 & 132 \\
+\textbf{Black} & 115 & 11 & 6 & 17 & 149 \\
+\textbf{계} & 208 & 26 & 20 & 27 & 281 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -8250,12 +8286,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-6.89 & 3 & 0.07548 \\
+6.954 & 3 & 0.07338 \\
 \end{longtable}
 
 Q4의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 6.89, 자유도는 3, p-value 는 0.075이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 6.95, 자유도는 3, p-value 는 0.073이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -8283,10 +8319,10 @@ RDD도입
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-73.8 & 9.1 & 7.3 & 9.8 & 100.0 \\
+74.0 & 9.3 & 7.1 & 9.6 & 100.0 \\
 \end{longtable}
 
-정답률은 Red, Black 을 합하여 계산하는데, 73.8(\%) 입니다.
+정답률은 Red, Black 을 합하여 계산하는데, 74.0(\%) 입니다.
 
 \section{Q5. 표본오차를 반으로 줄이려면?}\label{q5.-uxd45cuxbcf8uxc624uxcc28uxb97c-uxbc18uxc73cuxb85c-uxc904uxc774uxb824uxba74}
 
@@ -8319,9 +8355,9 @@ RDD도입
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red} & 23 & 84 & 14 & 6 & 127 \\
-\textbf{Black} & 37 & 94 & 15 & 2 & 148 \\
-\textbf{계} & 60 & 178 & 29 & 8 & 275 \\
+\textbf{Red} & 23 & 89 & 14 & 6 & 132 \\
+\textbf{Black} & 37 & 95 & 15 & 2 & 149 \\
+\textbf{계} & 60 & 184 & 29 & 8 & 281 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -8351,12 +8387,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-4.284 & 3 & 0.2324 \\
+4.485 & 3 & 0.2137 \\
 \end{longtable}
 
 Q5의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 4.28, 자유도는 3, p-value 는 0.23이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 4.48, 자유도는 3, p-value 는 0.21이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -8384,10 +8420,10 @@ Q5의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-21.8 & 64.7 & 10.5 & 2.9 & 100.0 \\
+21.4 & 65.5 & 10.3 & 2.8 & 100.0 \\
 \end{longtable}
 
-정답률은 Red, Black 을 합하여 계산하는데, 64.7(\%) 입니다.
+정답률은 Red, Black 을 합하여 계산하는데, 65.5(\%) 입니다.
 
 \section{Q6. 대선 여론조사의 목표모집단?}\label{q6.-uxb300uxc120-uxc5ecuxb860uxc870uxc0acuxc758-uxbaa9uxd45cuxbaa8uxc9d1uxb2e8}
 
@@ -8420,9 +8456,9 @@ Q5의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red} & 7 & 28 & 19 & 73 & 127 \\
-\textbf{Black} & 5 & 41 & 21 & 81 & 148 \\
-\textbf{계} & 12 & 69 & 40 & 154 & 275 \\
+\textbf{Red} & 7 & 29 & 19 & 77 & 132 \\
+\textbf{Black} & 5 & 41 & 21 & 82 & 149 \\
+\textbf{계} & 12 & 70 & 40 & 159 & 281 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -8452,12 +8488,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1.704 & 3 & 0.6359 \\
+1.625 & 3 & 0.6537 \\
 \end{longtable}
 
 Q6의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 1.70, 자유도는 3, p-value 는 0.64이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 1.63, 자유도는 3, p-value 는 0.65이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -8485,10 +8521,10 @@ Q6의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-4.4 & 25.1 & 14.5 & 56.0 & 100.0 \\
+4.3 & 24.9 & 14.2 & 56.6 & 100.0 \\
 \end{longtable}
 
-정답률은 Red, Black 을 합하여 계산하는데, 56.0(\%) 입니다.
+정답률은 Red, Black 을 합하여 계산하는데, 56.6(\%) 입니다.
 
 \section{Wason Selection Task}\label{wason-selection-task}
 
@@ -8582,16 +8618,16 @@ Wason Selection Task 는 인지 편향, 그 중에서도 확증 편향이 많은
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(추상적 질문)} & 42 & 85 & 127 \\
-\textbf{Black(구체적 질문)} & 91 & 57 & 148 \\
-\textbf{계} & 133 & 142 & 275 \\
+\textbf{Red(추상적 질문)} & 45 & 87 & 132 \\
+\textbf{Black(구체적 질문)} & 92 & 57 & 149 \\
+\textbf{계} & 137 & 144 & 281 \\
 \end{longtable}
 
 \{A, 2, B, 3\}에서 어느 카드를(들을) 골라야 ``한쪽 면이 모음이면, 다른 쪽 면은 짝수이다''라는 규칙을 지키고 있는 지 확인할 수 있는가? 라는 질문을 Red에 배치하고, \{Beer, 31, Coke, 17\}에서 누구를(들을) 검문해야 하는가라는 질문을 Black에 배치했습니다.
 
-Red의 경우 총 127(명)이 응답하였고 42(명)이 정답인 \{A, 3\}를 올렸습니다.
+Red의 경우 총 132(명)이 응답하였고 45(명)이 정답인 \{A, 3\}를 올렸습니다.
 
-구체적인 상황에 놓인 Black의 경우 총 148(명)이 응답하였고 91(명)이 정답인 \{Beer,17\}을 올려서 구체적인 질문에 압도적으로 많은 정답이 나온 것을 알 수 있습니다.
+구체적인 상황에 놓인 Black의 경우 총 149(명)이 응답하였고 92(명)이 정답인 \{Beer,17\}을 올려서 구체적인 질문에 압도적으로 많은 정답이 나온 것을 알 수 있습니다.
 
 이를 백분율로 비교해 보면
 
@@ -8616,11 +8652,11 @@ Red의 경우 총 127(명)이 응답하였고 42(명)이 정답인 \{A, 3\}를 �
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(추상적 질문)} & 33.1 & 66.9 & 100.0 \\
-\textbf{Black(구체적 질문)} & 61.5 & 38.5 & 100.0 \\
+\textbf{Red(추상적 질문)} & 34.1 & 65.9 & 100.0 \\
+\textbf{Black(구체적 질문)} & 61.7 & 38.3 & 100.0 \\
 \end{longtable}
 
-추상적인 질문으로 이루어진 Red에서는 33.1(\%)가 정답을 올렸고, 구체적인 질문으로 이루어진 Black에서는 61.5(\%)가 정답을 올려서 구체적인 질문에 압도적으로 많은 정답이 올라왔다는 것을 알 수 있습니다.
+추상적인 질문으로 이루어진 Red에서는 34.1(\%)가 정답을 올렸고, 구체적인 질문으로 이루어진 Black에서는 61.7(\%)가 정답을 올려서 구체적인 질문에 압도적으로 많은 정답이 올라왔다는 것을 알 수 있습니다.
 
 이 상황을 Mosiac Plot으로 살펴보겠습니다.
 
@@ -8674,14 +8710,14 @@ Q8에서는 Q7과 반대로 Red에 구체적 질문, Black에 추상적 질문�
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(구체적 질문)} & 74 & 53 & 127 \\
-\textbf{Black(추상적 질문)} & 40 & 108 & 148 \\
-\textbf{계} & 114 & 161 & 275 \\
+\textbf{Red(구체적 질문)} & 79 & 53 & 132 \\
+\textbf{Black(추상적 질문)} & 40 & 109 & 149 \\
+\textbf{계} & 119 & 162 & 281 \\
 \end{longtable}
 
-구체적인 질문을 배치한 Red의 경우 총 127(명)이 응답하였고 74(명)이 정답인 \{Beer, 17\}(을)를 올렸습니다.
+구체적인 질문을 배치한 Red의 경우 총 132(명)이 응답하였고 79(명)이 정답인 \{Beer, 17\}(을)를 올렸습니다.
 
-추상적인 질문을 배치한 Black의 경우 총 148(명)이 응답하였고 40(명)이 정답인 \{A,3\}(을)를 올려서 구체적인 질문에 압도적으로 많은 정답이 나온 것을 알 수 있습니다.
+추상적인 질문을 배치한 Black의 경우 총 149(명)이 응답하였고 40(명)이 정답인 \{A,3\}(을)를 올려서 구체적인 질문에 압도적으로 많은 정답이 나온 것을 알 수 있습니다.
 
 이를 백분율로 비교해 보면
 
@@ -8706,11 +8742,11 @@ Q8에서는 Q7과 반대로 Red에 구체적 질문, Black에 추상적 질문�
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(구체적 질문)} & 58.3 & 41.7 & 100.0 \\
-\textbf{Black(추상적 질문)} & 27.0 & 73.0 & 100.0 \\
+\textbf{Red(구체적 질문)} & 59.8 & 40.2 & 100.0 \\
+\textbf{Black(추상적 질문)} & 26.8 & 73.2 & 100.0 \\
 \end{longtable}
 
-구체적인 질문을 배치한 Red에서는 58.3(\%)가 정답을 올렸고, 추상적인 질문을 배치한 Black에서는 27.0(\%)가 정답을 올려서 구체적인 질문에 압도적으로 많은 정답이 올라왔다는 것을 알 수 있습니다.
+구체적인 질문을 배치한 Red에서는 59.8(\%)가 정답을 올렸고, 추상적인 질문을 배치한 Black에서는 26.8(\%)가 정답을 올려서 구체적인 질문에 압도적으로 많은 정답이 올라왔다는 것을 알 수 있습니다.
 
 이 상황을 Mosaic Plot으로 살펴보겠습니다.
 
@@ -8769,9 +8805,9 @@ Other
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(추상적 질문 먼저)} & 48 & 38 & 41 & 127 \\
-\textbf{Black(구체적 질문 먼저)} & 71 & 35 & 42 & 148 \\
-\textbf{계} & 119 & 73 & 83 & 275 \\
+\textbf{Red(추상적 질문 먼저)} & 49 & 41 & 42 & 132 \\
+\textbf{Black(구체적 질문 먼저)} & 72 & 35 & 42 & 149 \\
+\textbf{계} & 121 & 76 & 84 & 281 \\
 \end{longtable}
 
 \{A, 2, B, 3\}에서 어느 카드를(들을) 골라야 ``한쪽 면이 모음이면, 다른 쪽 면은 짝수이다''라는 규칙을 지키고 있는 지 확인할 수 있는가? 라는 질문이 Q7에 먼저 나오는 것을 Red에 배치하고, Black 에서는 \{A, 2, B, 3\}에 대한 질문이 Q8에 나오도록 배치했습니다.
@@ -8790,15 +8826,15 @@ A는 모음이니까 확인해야 할 것 같고, 2는 짝수이니까 확인하
 
 짝수가 아니면 홀수이니까 3을 뒤집어야 하는 것이죠.
 
-추상적 질문이 먼저 Q7에 나온 Red의 경우 총 127(명)이 응답하였고 48(명)이 확증편향에서 비롯된 \{A,2\}를 올렸습니다.
+추상적 질문이 먼저 Q7에 나온 Red의 경우 총 132(명)이 응답하였고 49(명)이 확증편향에서 비롯된 \{A,2\}를 올렸습니다.
 
-정답인 \{A,3\}를 올린 38(명)보다 훨씬 많습니다.
+정답인 \{A,3\}를 올린 41(명)보다 훨씬 많습니다.
 
-추상적 질문이 Q8에 나온 Black 의 경우 총 148(명)이 응답하였고 71(명)이 확증편향에서 비롯된 \{A,2\}를 올렸습니다.
+추상적 질문이 Q8에 나온 Black 의 경우 총 149(명)이 응답하였고 72(명)이 확증편향에서 비롯된 \{A,2\}를 올렸습니다.
 
 정답인 \{A,3\}를 올린 35(명)보다 훨씬 많습니다.
 
-합해서 119(명)이 확증편향에서 비롯된 \{A,2\}를 올렸고, 73(명)이 정답인 \{A,3\}를 올렸습니다.
+합해서 121(명)이 확증편향에서 비롯된 \{A,2\}를 올렸고, 76(명)이 정답인 \{A,3\}를 올렸습니다.
 
 이는 확증편향에서 비롯된 응답이 정답의 2배를 넘을 정도로 많다는 것을 보여줍니다.
 
@@ -8828,14 +8864,14 @@ Other
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(추상적 질문 먼저)} & 37.8 & 29.9 & 32.3 & 100.0 \\
-\textbf{Black(구체적 질문 먼저)} & 48.0 & 23.6 & 28.4 & 100.0 \\
-\textbf{계} & 43.3 & 26.5 & 30.2 & 100.0 \\
+\textbf{Red(추상적 질문 먼저)} & 37.1 & 31.1 & 31.8 & 100.0 \\
+\textbf{Black(구체적 질문 먼저)} & 48.3 & 23.5 & 28.2 & 100.0 \\
+\textbf{계} & 43.1 & 27.0 & 29.9 & 100.0 \\
 \end{longtable}
 
-추상적인 질문이 먼저 Q7에 나온 Red에서는 37.8(\%)가 확증편향에서 비롯된 응답 \{A,2\}를 올렸고, 29.9(\%)가 정답인 \{A,3\}을 올렸는데, 추상적인 질문이 나중에 Q8에 나온 Black 에서는 48.0(\%)가 확증편향에서 비롯된 응답 \{A,2\}를 올렸고, 23.6(\%)가 정답인 \{A,3\}을 올렸습니다.
+추상적인 질문이 먼저 Q7에 나온 Red에서는 37.1(\%)가 확증편향에서 비롯된 응답 \{A,2\}를 올렸고, 31.1(\%)가 정답인 \{A,3\}을 올렸는데, 추상적인 질문이 나중에 Q8에 나온 Black 에서는 48.3(\%)가 확증편향에서 비롯된 응답 \{A,2\}를 올렸고, 23.5(\%)가 정답인 \{A,3\}을 올렸습니다.
 
-합해서 보면 43.3(\%)가 확증편향에서 비롯된 응답 \{A,2\}를 올렸고, 26.5(\%)가 정답인 \{A,3\}을 올렸습니다.
+합해서 보면 43.1(\%)가 확증편향에서 비롯된 응답 \{A,2\}를 올렸고, 27.0(\%)가 정답인 \{A,3\}을 올렸습니다.
 
 확증편향으로 인한 응답이 정답보다 2배를 넘어가는 것을 다시 확인할 수 있습니다.
 
@@ -8887,8 +8923,8 @@ Mosaic Plot으로부터 확증편향에서 비롯된 응답의 비율이 정답�
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(추상적 질문 먼저)} & 42 & 74 & 116 \\
-\textbf{Black(구체적 질문 먼저)} & 40 & 91 & 131 \\
+\textbf{Red(추상적 질문 먼저)} & 45 & 79 & 124 \\
+\textbf{Black(구체적 질문 먼저)} & 40 & 92 & 132 \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -8918,14 +8954,14 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-0.6552 & 1 & 0.4183 \\
+0.7811 & 1 & 0.3768 \\
 \end{longtable}
 
-추상적 질문을 Q7에 배치하고 구체적 질문을 Q8에 배치한 Red의 경우 추상적 질문과 구체적 질문에 정답을 올린 사람은 총 116(명)이고 구체적 질문을 Q7에 배치하고 추상적 질문을 Q8에 배치한 Black의 경우 추상적 질문과 구체적 질문에 정답을 올린 사람은 총 131(명)으로 별로 차이가 나지 않습니다.
+추상적 질문을 Q7에 배치하고 구체적 질문을 Q8에 배치한 Red의 경우 추상적 질문과 구체적 질문에 정답을 올린 사람은 총 124(명)이고 구체적 질문을 Q7에 배치하고 추상적 질문을 Q8에 배치한 Black의 경우 추상적 질문과 구체적 질문에 정답을 올린 사람은 총 132(명)으로 별로 차이가 나지 않습니다.
 
 추상적 질문을 Q8에 배치한 Black 의 경우 40(명) 이 정답을 올려서 추상적 질문을 먼저 학습한 경우 정답을 더 많이 내었지만 통계적으로 유의한 차이는 아닌 것으로 나타나고 있습니다.
 
-카이제곱 통계량은 0.66, p-value 는 0.42으로 통계적으로 유의한 차이를 관찰하지 못하였습니다.
+카이제곱 통계량은 0.78, p-value 는 0.38으로 통계적으로 유의한 차이를 관찰하지 못하였습니다.
 
 따라서 학습 순서는 추상적 질문의 정답율에 영향을 미치지 못하고 있습니다.
 
@@ -8960,14 +8996,14 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red(추상적 질문 먼저)} & 51.2 & 44.8 \\
-\textbf{Black(구체적 질문 먼저)} & 48.8 & 55.2 \\
+\textbf{Red(추상적 질문 먼저)} & 52.9 & 46.2 \\
+\textbf{Black(구체적 질문 먼저)} & 47.1 & 53.8 \\
 \textbf{계} & 100.0 & 100.0 \\
 \end{longtable}
 
 추상적 질문에 대한 Red, Black 간 정답률 차이와 구체적 질문에 대한 Red, Black 간 정답률 차이를 비교하였습니다.
 
-추상적 질문에 대한 전체 정답 중에서 추상적 질문을 먼저 제시한 Red 가 51.2(\%)를 차지하여 추상적 질문을 나중에 제시한 Black 보다 높습니다만 그 차이는 앞에서 살펴 본 것처럼 통계적으로 유의하지는 않습니다.
+추상적 질문에 대한 전체 정답 중에서 추상적 질문을 먼저 제시한 Red 가 52.9(\%)를 차지하여 추상적 질문을 나중에 제시한 Black 보다 높습니다만 그 차이는 앞에서 살펴 본 것처럼 통계적으로 유의하지는 않습니다.
 
 \includegraphics{Quiz_report_2025_files/figure-latex/unnamed-chunk-204-1.pdf}
 
@@ -9000,11 +9036,11 @@ Mosaic Plot으로부터 구체적 질문이 먼저 주어진 Red나 구체적 �
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{추상적 문제} & 82 & 193 & 275 \\
-\textbf{구체적 문제} & 165 & 110 & 275 \\
+\textbf{추상적 문제} & 85 & 196 & 281 \\
+\textbf{구체적 문제} & 171 & 110 & 281 \\
 \end{longtable}
 
-추상적 질문에 답한 사람 총 275(명) 중에 정답을 올린 사람은 모두 82(명)이고 구체적 질문에 답한 사람 총 275(명) 중에 정답을 올린 사람은 모두 165(명)입니다. 백분율로 비교해 보면
+추상적 질문에 답한 사람 총 281(명) 중에 정답을 올린 사람은 모두 85(명)이고 구체적 질문에 답한 사람 총 281(명) 중에 정답을 올린 사람은 모두 171(명)입니다. 백분율로 비교해 보면
 
 \subsection{\% 비교}\label{uxbe44uxad50-5}
 
@@ -9027,11 +9063,11 @@ Mosaic Plot으로부터 구체적 질문이 먼저 주어진 Red나 구체적 �
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{추상적 문제} & 29.8 & 70.2 & 100.0 \\
-\textbf{구체적 문제} & 60.0 & 40.0 & 100.0 \\
+\textbf{추상적 문제} & 30.2 & 69.8 & 100.0 \\
+\textbf{구체적 문제} & 60.9 & 39.1 & 100.0 \\
 \end{longtable}
 
-추상적 질문에 정답을 올린 사람의 백분율은 29.8(\%)이고 구체적 질문에 정답을 올린 사람의 백분율은 29.8(\%)입니다.
+추상적 질문에 정답을 올린 사람의 백분율은 30.2(\%)이고 구체적 질문에 정답을 올린 사람의 백분율은 30.2(\%)입니다.
 
 추상적 질문의 정답율이 구체적 질문의 정답율에 비하여 월등히 낮다는 것을 알 수 있습니다. 이를 시각적으로 비교해 보겠습니다.
 
@@ -9139,9 +9175,9 @@ Mosaic Plot으로부터 구체적 질문이 먼저 주어진 Red나 구체적 �
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Red} & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 25 & 14 & 16 & 12 & 16 & 18 & 24 & 127 \\
-\textbf{Black} & 0 & 0 & 0 & 0 & 3 & 3 & 7 & 35 & 13 & 14 & 11 & 14 & 16 & 32 & 148 \\
-\textbf{계} & 0 & 0 & 0 & 0 & 4 & 3 & 8 & 60 & 27 & 30 & 23 & 30 & 34 & 56 & 275 \\
+\textbf{Red} & 0 & 0 & 0 & 5 & 1 & 0 & 1 & 25 & 14 & 16 & 12 & 16 & 18 & 24 & 132 \\
+\textbf{Black} & 0 & 0 & 0 & 1 & 3 & 3 & 7 & 35 & 13 & 14 & 11 & 14 & 16 & 32 & 149 \\
+\textbf{계} & 0 & 0 & 0 & 6 & 4 & 3 & 8 & 60 & 27 & 30 & 23 & 30 & 34 & 56 & 281 \\
 \end{longtable}
 
 분포표로부터 두 가지 문제를 살펴보겠습니다.
@@ -10411,7 +10447,7 @@ P value
 
 옥스포드 행복 설문지 실험결과를 분석합니다.
 
-옥스포드 행복 설문지(Oxford Happiness Questionnaire)는 긍정심리학(Psychology of Happiness) 분야에서 널리쓰이는 자기보고식 설문도구로 ``행복감(subjective well-being) 을 정량적으로 측정하기 위한 목적으로 1989년 Michael Argyle 과 Peter Hill 이 개발하였습니다 \citep{hills2002oxford} .
+옥스포드 행복 설문지(Oxford Happiness Questionnaire)는 긍정심리학(Psychology of Happiness) 분야에서 널리쓰이는 자기보고식 설문도구로 ``행복감(subjective well-being) 을 정량적으로 측정하기 위한 목적으로 1989년 Michael Argyle 과 Peter Hill 이 개발하였습니다 (Hills and Argyle 2002) .
 
 총 29개 문항으로 구성되어 있으며 각 문항은 Likert 척도 (1\textasciitilde6점)로 응답하게 되어 있고, 일부는 역문항이 포함되어 있어서 점수를 환산할 때 주의가 필요합니다.
 
@@ -17936,6 +17972,19 @@ P value
 
 \includegraphics{Quiz_report_2025_files/figure-latex/unnamed-chunk-414-1.pdf}
 
-\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc}
+\chapter*{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc}
+\addcontentsline{toc}{chapter}{참고문헌}
+
+\cleardoublepage
+\phantomsection
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-hills2002oxford}
+Hills, Peter, and Michael Argyle. 2002. {``The Oxford Happiness Questionnaire: A Compact Scale for the Measurement of Psychological Well-Being.''} \emph{Personality and Individual Differences} 33 (7): 1073--82.
+
+\end{CSLReferences}
 
 \end{document}
