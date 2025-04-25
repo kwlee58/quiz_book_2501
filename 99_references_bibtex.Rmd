@@ -1,0 +1,7 @@
+# 참고문헌 {-}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{참고문헌}
+\bibliographystyle{apalike}
+\bibliography{references}
