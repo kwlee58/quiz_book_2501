@@ -18,10 +18,10 @@ font_add(family = "kopub",
          regular = "/Users/kwlee/Library/Fonts/KoPubWorld Dotum Medium.ttf",
          bold = "/Users/kwlee/Library/Fonts/KoPubWorld Dotum Bold.ttf",
          italic  = "/Users/kwlee/Library/Fonts/KoPubWorld Dotum Light.ttf")
-font_add(family = "Spoqa", 
-         regular = "/Users/kwlee/Library/Fonts/SpoqaHanSansNeo-Regular.ttf",
-         bold = "/Users/kwlee/Library/Fonts/SpoqaHanSansNeo-Bold.ttf",
-         italic  = "/Users/kwlee/Library/Fonts/SpoqaHanSansNeo-Light.ttf")
+# font_add(family = "Spoqa", 
+#          regular = "/Users/kwlee/Library/Fonts/SpoqaHanSansNeo-Regular.ttf",
+#          bold = "/Users/kwlee/Library/Fonts/SpoqaHanSansNeo-Bold.ttf",
+#          italic  = "/Users/kwlee/Library/Fonts/SpoqaHanSansNeo-Light.ttf")
 showtext_auto()
 panderOptions('table.split.table', Inf)
 panderOptions('table.alignment.rownames', 'left')
@@ -683,9 +683,9 @@ df$Var2 %<>%
 p_df$Var2 %<>% 
   factor(labels = c("원형그래프", "막대그래프"))
 m + geom_text(aes(x = center, y = 1.05), 
-              family = "Spoqa",
+              family = "kopub",
               label = df[, 2]) +
-  theme_bw(base_family = "Spoqa") +
+  theme_bw(base_family = "kopub") +
   labs(title = "눈속임그래프의 인식", x = "Red or Black(누적 %)", y = "인원(%, 명)") +
   scale_fill_brewer(name = "응답", 
                     labels = c("제대로 보여주고 있다", 
@@ -696,7 +696,7 @@ m + geom_text(aes(x = center, y = 1.05),
                     direction = 1) +
   theme(plot.title = element_text(hjust = 0.5, 
                                   size = 18, 
-                                  family = "Spoqa",
+                                  family = "kopub",
                                   face = "bold")) 
 ggsave("./pics/Quiz250310_Q7_RnB.png", dpi = 120, width = 960, height = 840, units = "px")
 ```
@@ -718,6 +718,7 @@ days_tbl <-
 days_tbl %>%
   cbind("계" = rowSums(.)) %>%
   rbind("계" = colSums(.)) %>%
+  `colnames<-`(., c(paste0(14:1, "일"), "계")) %>%
   pander(caption = "일 단위")
 ```
 
@@ -734,12 +735,13 @@ days_tbl %>%
 ```{r, echo = FALSE, warning = FALSE}
 days_tbl %>%
   rbind("계" = colSums(.)) %>%
-  `[`(3, 2:14) %>%
+  `[`(3, 1:14) %>%
+  `names<-`(., paste0(14:1, "일")) %>%
   pander
 days_chisq_test <-
   days_tbl %>%
   rbind("계" = colSums(.)) %>%
-  `[`(3, 2:14) %>%
+  `[`(3, 1:14) %>%
   chisq.test(simulate.p.value = FALSE) 
 days_chisq_test %>%
   pander
@@ -760,7 +762,7 @@ days_chisq_test %>%
 ```{r, echo = FALSE}
 # png(file = "./pics/2302/quiz_submission_8.png", width = 640, height = 480)
 suppressMessages({
-par(family = "Spoqa")
+par(family = "kopub")
 b <- 
   quiz$days %>%
   cut(breaks = c(0:14), include.lowest = TRUE) %>%
@@ -787,11 +789,12 @@ invisible(dev.off())
 ```{r, echo = FALSE, warning = FALSE}
 days_tbl %>%
   rbind("계" = colSums(.)) %>%
-  `[`(-3, 2:14) %>%
+  `[`(-3, 1:14) %>%
+  `colnames<-`(., paste0(14:1, "일")) %>%
   pander
 days_RnB_chisq_test <-
   days_tbl %>%
-  `[`(-3, 2:14) %>%
+  `[`(-3, 1:14) %>%
   chisq.test(simulate.p.value = FALSE) 
 days_RnB_chisq_test %>%
   pander
@@ -821,7 +824,7 @@ names(df2[, 2]) <- "Days"
 m2 + geom_text(aes(x = center, y = 1.05), 
               family = "kopub",
               label = rep(rep(c("월", "화", "수", "목", "금", "토", "일"), each = 2), times = 2)) +
-  theme_bw(base_family = "Spoqa") +
+  theme_bw(base_family = "kopub") +
   labs(title = "마감일로부터 제출시간의 분포", x = "마감일로부터 일수(누적 %)", y = "인원 백분율(%)") +
   scale_fill_brewer(name = "그룹", 
                     labels = c("Red", 
@@ -831,7 +834,7 @@ m2 + geom_text(aes(x = center, y = 1.05),
                     direction = 1) +
   theme(plot.title = element_text(hjust = 0.5, 
                                   size = 18, 
-                                  family = "Spoqa",
+                                  family = "kopub",
                                   face = "bold"),
         axis.text.x = element_text(angle = -90, vjust = 0.5)) 
 ggsave("./pics/Quiz250310_submission_2.png", dpi = 120, width = 960, height = 840, units = "px")
