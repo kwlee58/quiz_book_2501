@@ -19,14 +19,23 @@ rmd_files: [
   "quiz250407_Report_v4.Rmd",
   "quiz250414_Report_v4.Rmd",
   "quiz241021_Report_v3.Rmd",
+  "quiz250421_Report_v3.Rmd",
   "Oxford_Happiness2402_Report.Rmd",
+  "Oxford_Happiness2501_Report_v2.Rmd",
   "quiz241028_Report_v3.Rmd",
+  "quiz250428_Report_v3.Rmd",
   "quiz241104_Report_v3.Rmd",
+  "quiz250505_Report_v3.Rmd",
   "food_comp2402.Rmd",
+  "food_comp2501.Rmd",
   "quiz241111_Report_v4.Rmd",
+  "quiz250512_Report_v5.Rmd",
   "BFI_MI_241111_Summary_p.Rmd",
+  "BFI_MI_250512_Summary_p.Rmd",
   "quiz241118_Report_v4.Rmd",
+  "quiz250519_Report_v4.Rmd",
   "quiz241125_Report_v4.Rmd",
+  "Monty_Hall_250519_Report.Rmd",
   "99_references.Rmd" # 부록 또는 마무리
 ]
 

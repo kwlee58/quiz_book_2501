@@ -7,6 +7,8 @@ library(pander)
 library(knitr)
 library(magrittr)
 library(dplyr)
+library(stringr)
+library(googlesheets4)
 library(showtext)
 font_add(family = "kopub", 
          regular = "/Users/kwlee/Library/Fonts/KoPubWorld Dotum Medium.ttf",
@@ -52,8 +54,6 @@ names(quiz) <-
     "group", "Q4_R", "Q5_R", "Q6_R", "Q4_B", "Q5_B", "Q6_B")
 str(quiz)
 class(quiz$id) <- "character"
-quiz$dept %<>% 
-  factor
 quiz$group %<>% 
   factor(levels = c("Red", "Black"))
 quiz[10:15] %<>% 
@@ -93,10 +93,6 @@ quiz$Q3 %<>%
 quiz$days <- as.numeric(difftime("2024-11-04 09:00:00", quiz$time, tz = "Asia/Seoul",  units = 'days'))
 quiz$hours <- as.numeric(difftime("2024-11-04 09:00:00", quiz$time, tz = "Asia/Seoul", units = 'hours'))
 str(quiz)
-```
-
-```{r, randomization, echo = FALSE, results = 'hide'}
-pander(summary(quiz))
 ```
 
 ```{r, cleaning, echo = FALSE, results = 'hide'}
@@ -263,7 +259,7 @@ include_graphics("./pics/Quiz180409_01.png")
 
 ### 집계
 
-```{r, randomized placebo control approach, echo = FALSE, warning = FALSE}
+```{r, echo = FALSE, warning = FALSE}
 tbl_q1_a <- quiz$Q1 %>%
   table(quiz$group, ., useNA = "ifany") %>%
   cbind("계" = rowSums(.)) %>%
@@ -287,7 +283,7 @@ Q1의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 ### 집계 (%)
 
-```{r, randomized placebo control approach in percentage, echo = FALSE}
+```{r, echo = FALSE}
 ptbl_q1 <- 
   tbl_q1_a %>% 
   `[`(3, -5) %>%
@@ -309,7 +305,7 @@ include_graphics("./pics/Quiz180409_02.png")
 
 ### 집계
 
-```{r, Treatment vs Control, echo = FALSE, warning = FALSE}
+```{r, echo = FALSE, warning = FALSE}
 tbl_q2_a <- quiz$Q2 %>%
   table(quiz$group, ., useNA = "ifany") %>%
   cbind("계" = rowSums(.)) %>%
@@ -333,7 +329,7 @@ Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 ### 집계 (%)
 
-```{r, opposite in percentage, echo = FALSE}
+```{r, echo = FALSE}
 ptbl_q2 <- 
   tbl_q2_a %>% 
   `[`(3, -5) %>%
@@ -355,7 +351,7 @@ include_graphics("./pics/polio_03.png")
 
 ### 집계
 
-```{r, NFIP, echo = FALSE}
+```{r, echo = FALSE}
 tbl_q3_a <- quiz$Q3 %>%
   table(quiz$group, ., useNA = "ifany") %>%
   cbind("계" = rowSums(.)) %>%
@@ -379,7 +375,7 @@ Q3의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 ### 집계 (%)
 
-```{r, NFIP %, echo = FALSE}
+```{r, echo = FALSE}
 ptbl_q3 <- 
   tbl_q3_a %>% 
   `[`(3, -5) %>%
@@ -446,7 +442,7 @@ Red 와 Black 은 선택지의 순서만 바꾼 것인데 아무런 영향을 �
 
 ### % 비교.  
 
-```{r, social comparison in percentage, echo = FALSE}
+```{r, echo = FALSE}
 ptbl_q4_a <- 
   tbl_q4_a %>% 
   `[`(-3, -3) %>%
@@ -464,7 +460,7 @@ ptbl_q4_a %>%
 
 ### 합산(%)
 
-```{r, percentage in sum, echo = FALSE}
+```{r, echo = FALSE}
 ptbl_q4 <- 
   tbl_q4_a %>% 
   `[`(3, -3) %>%
@@ -858,5 +854,4 @@ ggsave("./pics/Quiz241021_submission_8.png", dpi = 120, width = 960, height = 84
 
 ```{r, save, echo = FALSE}
 saveRDS(quiz[c("id", "name")], file = "./quiz241021.RDS")
-# save.image("./quiz241021.RData")
 ```
