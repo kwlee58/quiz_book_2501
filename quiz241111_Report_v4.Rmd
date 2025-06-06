@@ -9,9 +9,9 @@ library(knitr)
 library(dplyr)
 library(showtext)
 font_add(family = "kopub", 
-         regular = "/Users/kwlee/Library/Fonts/KoPubWorld Dotum Medium.ttf",
-         bold = "/Users/kwlee/Library/Fonts/KoPubWorld Dotum Bold.ttf",
-         italic  = "/Users/kwlee/Library/Fonts/KoPubWorld Dotum Light.ttf")
+         regular = "~/Library/Fonts/KoPubWorld Dotum Medium.ttf",
+         bold = "~/Library/Fonts/KoPubWorld Dotum Bold.ttf",
+         italic  = "~/Library/Fonts/KoPubWorld Dotum Light.ttf")
 showtext_auto()
 panderOptions('table.split.table', Inf)
 panderOptions('table.alignment.rownames', 'left')
@@ -802,5 +802,4 @@ ggsave("./pics/Quiz241111_submission_11.png", dpi = 120, width = 960, height = 8
 
 ```{r, echo = FALSE}
 saveRDS(quiz, file = "quiz241111.RDS")
-# save.image("./quiz241111.RData")
 ```
