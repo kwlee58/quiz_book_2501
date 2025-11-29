@@ -1,10 +1,11 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
 ]{book}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -35,7 +36,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -61,10 +61,6 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
 % definitions for citeproc citations
 \NewDocumentCommand\citeproctext{}{}
 \NewDocumentCommand\citeproc{mm}{%
@@ -98,6 +94,9 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{fontspec}
 \setmainfont{KoPubWorldDotum}
 \usepackage{titlesec}
@@ -116,7 +115,7 @@
 
 \title{Quiz Reports: 2025 Spring}
 \author{이기원 (Kee-Won Lee)}
-\date{2025-06-06}
+\date{2025-11-29}
 
 \begin{document}
 \maketitle
@@ -704,10 +703,6 @@ Black에는 같은 주장에 대하여 부적절한 논의라는 쪽에 부정�
 
 \subsection{Mosaic Plot}\label{mosaic-plot}
 
-\begin{verbatim}
-## Keep up to date with changes at https://tidyverse.org/blog/
-\end{verbatim}
-
 \pandocbounded{\includegraphics[keepaspectratio]{Quiz_report_2025_files/figure-latex/unnamed-chunk-14-1.pdf}}
 
 Mosaic Plot 은 이 집계결과를 시각적으로 잘 보여줍니다.
@@ -1212,12 +1207,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-9.064 & NA & 0.06247 \\
+9.064 & NA & 0.07196 \\
 \end{longtable}
 
 Q1의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 9.06, 자유도는 NA , p-value 는 0.0625이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 9.06, 자유도는 NA , p-value 는 0.0720이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -1320,12 +1315,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-2.056 & NA & 0.6617 \\
+2.056 & NA & 0.6822 \\
 \end{longtable}
 
 Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 2.056, 자유도는 NA, p-value 는 0.6617이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 2.056, 자유도는 NA, p-value 는 0.6822이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -1526,12 +1521,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-8.269 & NA & 0.03648 * \\
+8.269 & NA & 0.04548 * \\
 \end{longtable}
 
 Q4의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 8.269, 자유도는 NA, p-value 는 0.0365이므로 Red, Black 간에 통계적으로 유의한 차이를 보이고 있습니다.
+그 결과 카이제곱 통계량은 8.269, 자유도는 NA, p-value 는 0.0455이므로 Red, Black 간에 통계적으로 유의한 차이를 보이고 있습니다.
 
 \subsection{총인구 최대 시기(\%)}\label{uxcd1duxc778uxad6c-uxcd5cuxb300-uxc2dcuxae30}
 
@@ -1626,12 +1621,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-0.7955 & NA & 0.8506 \\
+0.7955 & NA & 0.8651 \\
 \end{longtable}
 
 Q5의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있는지 알아보기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 0.795, 자유도는 NA, p-value 는 0.8506이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
+그 결과 카이제곱 통계량은 0.795, 자유도는 NA, p-value 는 0.8651이므로 Red, Black 간에 통계적으로 유의한 차이를 보이지 않습니다.
 
 실제로 닮은 게 느껴집니까?
 
@@ -11891,12 +11886,12 @@ P value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-22.61 & NA & 0.0009995 * * * \\
+22.61 & NA & 0.0004998 * * * \\
 \end{longtable}
 
 국문, 영문 행복도 조사 결과의 등급별 차이를 파악하기 위하여 카이제곱 테스트를 수행하였습니다.
 
-그 결과 카이제곱 통계량은 22.61, 반복수 2,0000의 붓스트랩 근사를 사용하였기 때문에 자유도는 알 수 없고, p-value 는 0.001이므로 통계적으로 유의한 차이를 보입니다.
+그 결과 카이제곱 통계량은 22.61, 반복수 2,0000의 붓스트랩 근사를 사용하였기 때문에 자유도는 알 수 없고, p-value 는 5e-04이므로 통계적으로 유의한 차이를 보입니다.
 
 \subsection{백분율(\%)}\label{uxbc31uxbd84uxc728}
 
@@ -22540,11 +22535,11 @@ Q1의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 정답률은 Red, Black 을 합하여 계산하는데, 60.8(\%) 입니다.
 
-\section{Q2. Stanley Milgram}\label{q2.-stanley-milgram}
+\section{Q2. Solomon Asch}\label{q2.-solomon-asch}
 
-\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_02}
+\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_03}
 
-\subsection{450V까지 누르는 사람}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c}
+\subsection{Power of 3}\label{power-of-3}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
@@ -22557,13 +22552,13 @@ Q1의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 \begin{minipage}[b]{\linewidth}\raggedright
 ~
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-15\%
+1명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-25\%
+2명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-45\%
+3명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-65\%
+4명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 계
 \end{minipage} \\
@@ -22612,7 +22607,7 @@ Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 실제로 닮은 게 느껴집니까?
 
-\subsection{450V까지 누르는 사람 (\%)}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c-1}
+\subsection{Power of 3 (\%)}\label{power-of-3-1}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
@@ -22622,13 +22617,13 @@ Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1111}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-15\%
+1명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-25\%
+2명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-45\%
+3명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-65\%
+4명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 계
 \end{minipage} \\
@@ -22641,11 +22636,11 @@ Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 정답률은 Red, Black 을 합하여 계산하는데, 74.5(\%) 입니다.
 
-\section{Q3. Solomon Asch}\label{q3.-solomon-asch}
+\section{Q3. Stanley Milgram}\label{q3.-stanley-milgram}
 
-\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_03}
+\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_02}
 
-\subsection{Power of 3}\label{power-of-3}
+\subsection{450V까지 누르는 사람}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
@@ -22658,13 +22653,13 @@ Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 \begin{minipage}[b]{\linewidth}\raggedright
 ~
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-1명
+15\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-2명
+25\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-3명
+45\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-4명
+65\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 계
 \end{minipage} \\
@@ -22713,7 +22708,7 @@ Q3의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 실제로 닮은 게 느껴집니까?
 
-\subsection{Power of 3 (\%)}\label{power-of-3-1}
+\subsection{450V까지 누르는 사람 (\%)}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c-1}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
@@ -22723,13 +22718,13 @@ Q3의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1111}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-1명
+15\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-2명
+25\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-3명
+45\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-4명
+65\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 계
 \end{minipage} \\
@@ -23642,30 +23637,30 @@ Q1의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 정답률은 Red, Black 을 합하여 계산하는데, 59.7(\%) 입니다.
 
-\section{Q2. Stanley Milgram}\label{q2.-stanley-milgram-1}
+\section{Q2. Solomon Asch}\label{q2.-solomon-asch-1}
 
-\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_02}
+\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_03}
 
-\subsection{450V까지 누르는 사람}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c-2}
+\subsection{Power of 3}\label{power-of-3-2}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
   >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 ~
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-15\%
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-25\%
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-45\%
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-65\%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+1명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+2명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+3명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+4명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 계
 \end{minipage} \\
@@ -23714,23 +23709,23 @@ Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 실제로 닮은 게 느껴집니까?
 
-\subsection{450V까지 누르는 사람 (\%)}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c-3}
+\subsection{Power of 3 (\%)}\label{power-of-3-3}
 
 \begin{longtable}[]{@{}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
   >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1111}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedleft
-15\%
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-25\%
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-45\%
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-65\%
+\begin{minipage}[b]{\linewidth}\centering
+1명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+2명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+3명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+4명
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 계
 \end{minipage} \\
@@ -23743,30 +23738,30 @@ Q2의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 정답률은 Red, Black 을 합하여 계산하는데, 75.6(\%) 입니다.
 
-\section{Q3. Solomon Asch}\label{q3.-solomon-asch-1}
+\section{Q3. Stanley Milgram}\label{q3.-stanley-milgram-1}
 
-\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_03}
+\includegraphics[width=0.9\linewidth]{./pics/Quiz201109_02}
 
-\subsection{Power of 3}\label{power-of-3-2}
+\subsection{450V까지 누르는 사람}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c-2}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
-  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
-  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
-  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
-  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}
   >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0833}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 ~
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-1명
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-2명
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-3명
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-4명
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+15\%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+25\%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+45\%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+65\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 계
 \end{minipage} \\
@@ -23815,23 +23810,23 @@ Q3의 집계 결과가 Red, Black 간에 통계적으로 유의한 차이가 있
 
 실제로 닮은 게 느껴집니까?
 
-\subsection{Power of 3 (\%)}\label{power-of-3-3}
+\subsection{450V까지 누르는 사람 (\%)}\label{vuxae4cuxc9c0-uxb204uxb974uxb294-uxc0acuxb78c-3}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0833}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0972}}
   >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1111}}@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-1명
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-2명
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-3명
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-4명
+\begin{minipage}[b]{\linewidth}\raggedleft
+15\%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+25\%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+45\%
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+65\%
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 계
 \end{minipage} \\
